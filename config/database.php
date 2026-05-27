@@ -11,10 +11,14 @@ if($database_url){
     $db = parse_url($database_url);
 
     $host = $db['host'];
-    $port = $db['port'];
     $user = $db['user'];
     $password = $db['pass'];
+
+    /* EXTRAER DBNAME */
     $dbname = ltrim($db['path'], '/');
+
+    /* PUERTO POR DEFECTO */
+    $port = isset($db['port']) ? $db['port'] : 5432;
 
 }else{
 
