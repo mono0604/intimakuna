@@ -1,30 +1,26 @@
 <?php
 
-/* ===================================== */
-/* DETECTAR PRODUCCION O LOCAL */
-/* ===================================== */
+/* ========================= */
+/* RENDER DATABASE URL */
+/* ========================= */
 
-if(getenv("DATABASE_URL")){
+$database_url = getenv("DATABASE_URL");
 
-    /* ===================================== */
-    /* PRODUCCION - RENDER */
-    /* ===================================== */
+if($database_url){
 
-    $databaseUrl = getenv("DATABASE_URL");
+    $db = parse_url($database_url);
 
-    $db = parse_url($databaseUrl);
-
-    $host = $db["host"];
-    $port = $db["port"];
-    $dbname = ltrim($db["path"], '/');
-    $user = $db["user"];
-    $password = $db["pass"];
+    $host = $db['host'];
+    $port = $db['port'];
+    $user = $db['user'];
+    $password = $db['pass'];
+    $dbname = ltrim($db['path'], '/');
 
 }else{
 
-    /* ===================================== */
-    /* LOCALHOST */
-    /* ===================================== */
+    /* ========================= */
+    /* LOCALHOST XAMPP */
+    /* ========================= */
 
     $host = "localhost";
     $port = "5432";
