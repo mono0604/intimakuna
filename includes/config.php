@@ -1,5 +1,5 @@
 <?php
 
-$base_url = "https://" . $_SERVER['HTTP_HOST'] . "/intimakuna/";
+$base_url = "https://" . $_SERVER['HTTP_HOST'] . "/";
 
 ?>
