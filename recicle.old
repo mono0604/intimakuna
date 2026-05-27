@@ -1,0 +1,54 @@
+    <!-- EVENTOS -->
+
+<section class="eventos">
+
+    <div class="titulo">
+
+        <h2>Próximos Eventos</h2>
+
+        <p>
+            Participa en nuestras actividades culturales,
+            talleres y encuentros comunitarios.
+        </p>
+
+    </div>
+
+    <div class="eventos-grid">
+
+        <div class="evento-card">
+
+            <span class="fecha">15 JUL</span>
+
+            <h3>Festival Cultural</h3>
+
+            <p>
+                Actividades artísticas y culturales abiertas al público.
+            </p>
+
+        </div>
+
+        <div class="evento-card">
+
+            <span class="fecha">20 JUL</span>
+
+            <h3>Taller Ambiental</h3>
+
+            <p>
+                Formación en sostenibilidad y cuidado del territorio.
+            </p>
+
+        </div>
+
+        <div class="evento-card">
+
+            <span class="fecha">28 JUL</span>
+
+            <h3>Encuentro Comunitario</h3>
+
+            <p>
+                Espacio de integración y fortalecimiento social.
+            </p>
+
+        </div>
+
+    </div>
