@@ -1,3 +1,4 @@
+<?php include 'includes/header.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -12,9 +13,6 @@
 </head>
 
 <body>
-
-<?php include 'includes/header.php'; ?>
-
 
     <!-- HERO SLIDER -->
 <section class="hero-slider">

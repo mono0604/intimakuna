@@ -1,8 +1,6 @@
 <?php
 include __DIR__ . '/config.php';
-if(session_status() === PHP_SESSION_NONE){
-    session_start();
-}
+
 ?>
 
 <header class="header">
@@ -12,6 +10,11 @@ if(session_status() === PHP_SESSION_NONE){
             <img src="<?php echo $base_url; ?>assets/img/logo.png">
         </a>
     </div>
+    <button class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
     <!-- MENU -->
     <nav class="navbar">
