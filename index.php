@@ -43,7 +43,7 @@
             <p>
                 Experiencias auténticas junto a las comunidades.
             </p>
-            <a href="#catalogo" class="btn">
+            <a href="experiencias.php" class="btn">
                 Descubrir
             </a>
         </div>
@@ -74,10 +74,19 @@
     </button>
 
 </section>
-
+        
+        
     <!-- BENEFICIOS -->
-    <section class="beneficios">
+<section class="dark-section">
+    <div class="titulo">
+        <h2>Beneficios</h2>
+        <p>
+            Intimakita te brinda experiencias enriquecedoras de arte cultura y saberes.
+        </p>
+        </div>
 
+    <section class="beneficios">
+        
         <div class="beneficio">
             <i class="fa-solid fa-hourglass-half"></i>
             <h3>Ahorro de tiempo</h3>
@@ -127,10 +136,10 @@
         </div>
 
     </section>
+</section>
 
     <!-- SERVICIOS -->
-    <section class="servicios" id="servicios">
-
+    <section class="light-section" id="servicios">
         <div class="titulo">
             <h2>Nuestros Servicios</h2>
             <p>
@@ -138,7 +147,6 @@
                 turístico y comunitario.
             </p>
         </div>
-
         <div class="cards">
             <div class="card">
                 <img src="<?php echo $base_url; ?>assets/img/index/servicio1.jpg" alt=""
@@ -156,9 +164,7 @@
                 <img src="<?php echo $base_url; ?>assets/img/index/servicio2.jpg" alt=""
                 onclick="abrirImagen(this.src)">
                 <div class="card-content">
-                    <a href="<?php echo $base_url; ?>eventos.php">
-                    <h3 >Eventos Culturales</h3>
-                    </a>
+                    <h3>Eventos Culturales</h3>
                     <p>
                         Participe en nuestros eventos culturales que promueve el intercambio cultural y social.
                     </p>
@@ -179,61 +185,10 @@
                 <img src="<?php echo $base_url; ?>assets/img/index/servicio4.jpg" alt=""
                 onclick="abrirImagen(this.src)">
                 <div class="card-content">
-                    <a href="<?php echo $base_url; ?>index.php#catalogo">
                     <h3>Alianza en turismo</h3>
-                    </a>
                     <p>
                         Ofrecemos alojamiento rural, tours guiados y rutas de turismo para todas las edades.
                     </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- DESTINOS TURISTICOS -->
-    <section class="catalogo" id="catalogo">
-        <div class="titulo">
-            <h2>Destinos y Experiencias</h2>
-            <p>
-                Descubre lugares, cultura y experiencias únicas
-                ofrecidas por la Fundación Intimakuna.
-            </p>
-        </div>
-        <div class="catalogo-grid">
-            <div class="catalogo-card">
-                <img src="<?php echo $base_url; ?>assets/img/index/turismo1.jpg" alt="">
-                <div class="catalogo-content">
-                    <h3 style="text-align: center;">RUTA SOL DE LOS PASTOS<br> 3 Días - 2 Noches</h3>
-                    <p style="text-align: center;">
-                        Recorridos culturales y turísticos por territorios ancestrales.<br>A partir de $xxx.xxx COP
-                    </p>
-                    <a href="sol_de_los_pastos.php" class="btn">
-                        Ver Más
-                    </a>
-                </div>
-            </div>
-            <div class="catalogo-card">
-                <img src="<?php echo $base_url; ?>assets/img/index/turismo2.jpg" alt="">
-                <div class="catalogo-content">
-                    <h3 style="text-align: center;">RUTA CUMBAL - MUELLAMUES <br> 2 Días - 1 Noche</h3>
-                    <p style="text-align: center;">
-                        Experiencias auténticas junto a las comunidades locales.<br>A partir de $xxx.xxx COP
-                    </p>
-                    <a href="cumbal_muellamues.php" class="btn">
-                        Ver Más
-                    </a>
-                </div>
-            </div>
-            <div class="catalogo-card">
-                <img src="<?php echo $base_url; ?>assets/img/index/turismo3.jpg" alt="">
-                <div class="catalogo-content">
-                    <h3 style="text-align: center;">VIVERO PUNDÉ <br> 1 Dia</h3>
-                    <p style="text-align: center;">
-                        Espacios naturales y actividades ambientales sostenibles.<br>A partir de $xxx.xxx COP
-                    </p>
-                    <a href="punde_intimakuna.php" class="btn">
-                        Ver Más
-                    </a>
                 </div>
             </div>
         </div>
@@ -262,30 +217,9 @@
         </div>
     </section>
 
-    <!-- ESTADISTICAS -->
-    <section class="estadisticas">
-        <div class="estadistica">
-            <h2>11+</h2>
-            <p>Proyectos</p>
-        </div>
-        <div class="estadistica">
-            <h2>5+</h2>
-            <p>Premios</p>
-        </div>
-        <div class="estadistica">
-            <h2>100+</h2>
-            <p>Clientes</p>
-        </div>
-        <div class="estadistica">
-            <h2>13+</h2>
-            <p>Miembros</p>
-        </div>
-
-    </section>
-
     <!-- TESTIMONIOS -->
 
-    <section class="testimonios">
+    <section class="light-section">
         <div class="titulo">
             <h2>Testimonios</h2>
         </div>
@@ -323,8 +257,27 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- ESTADISTICAS -->
+    <section class="estadisticas">
+        <div class="estadistica">
+            <h2>11+</h2>
+            <p>Proyectos</p>
+        </div>
+        <div class="estadistica">
+            <h2>5+</h2>
+            <p>Premios</p>
+        </div>
+        <div class="estadistica">
+            <h2>100+</h2>
+            <p>Clientes</p>
+        </div>
+        <div class="estadistica">
+            <h2>13+</h2>
+            <p>Miembros</p>
+        </div>
+    </section>
 
+    <!-- FOOTER -->
     <?php include 'includes/footer.php'; ?>
 
     <!-- JS -->

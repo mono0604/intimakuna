@@ -60,22 +60,22 @@ $pagina_actual = 'disponibilidad';
                         Experiencia
                     </label>
 
-                    <select name="experiencia"
+                    <select name="id_experiencia"
                             required>
 
                         <option value="">
                             Selecciona una experiencia
                         </option>
 
-                        <option value="RUTA CUMBAL - MUELLAMUES">
-                            RUTA CUMBAL - MUELLAMUES
-                        </option>
-
-                        <option value="SOL DE LOS PASTOS">
+                        <option value="1">
                             SOL DE LOS PASTOS
                         </option>
 
-                        <option value="PUNDÉ INTIMAKUNA">
+                        <option value="2">
+                            RUTA CUMBAL - MUELLAMUES
+                        </option>
+
+                        <option value="3">
                             PUNDÉ INTIMAKUNA
                         </option>
 

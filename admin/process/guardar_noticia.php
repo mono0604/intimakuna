@@ -19,7 +19,7 @@ $categoria = $_POST['categoria'];
 /* ========================= */
 $imagen = $_FILES['imagen']['name'];
 $tmp = $_FILES['imagen']['tmp_name'];
-$ruta = "../../assets/img/admin/noticias/" . $imagen;
+$ruta = "../assets/img/noticias/" . $imagen;
 move_uploaded_file($tmp, $ruta);
 
 /* ========================= */

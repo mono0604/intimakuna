@@ -1,15 +1,13 @@
-<?php
-include 'includes/config.php';
-?>
-
+<?php include 'includes/header.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
     <title>
-        Pundé Intimakuna | Fundación Intimakuna
+        Vivero Pundé Intimakuna
     </title>
     <link rel="stylesheet"
           href="assets/css/style.css">
@@ -19,208 +17,167 @@ include 'includes/config.php';
 
 <body>
 
-<!-- HEADER -->
-<?php include 'includes/header.php'; ?>
-
 <!-- HERO -->
 <section class="hero-general"
-         style="background-image:url('assets/img/destinos/punde/portada_punde.jpg');">
+style="background-image:url('assets/img/destinos/punde/portada_punde.jpg');">
     <div class="overlay-general"></div>
     <div class="hero-general-content">
-        <span>
-            EXPERIENCIA ANCESTRAL
-        </span>
         <h1>
-            VIVERO PUNDÉ
+            Vivero Pundé Intimakuna
         </h1>
         <p>
-            Conecta con la cultura indígena,
-            la naturaleza y la espiritualidad
-            de los pueblos Pastos en el sur de Nariño.
+            Conservación ambiental, restauración ecológica
+            y protección de especies nativas desde el
+            territorio indígena de Muellamues.
         </p>
     </div>
 </section>
 
-<!-- INTRO -->
-<section class="light-section">
-    <div class="destino-container">
-        <div class="main-grid">
-            <div class="main-texto">
-                <span>
-                    TURISMO VIVENCIAL
-                </span>
-                <h2>
-                    Una experiencia que transforma
-                </h2>
-                <p>
-                    Las instalaciones del Vivero Pundé Intimakuna 
-                    se encuentran ubicadas en la Vereda Chapud del 
-                    Resguardo Indígena de Muellamues - Municipio 
-                    de Guachucal Nariño, tiene un área de 
-                    13 metros x 10 metros, está construido en material 
-                    maderable como guadua, varengas con cimientos en concreto 
-                    para evitar el daño de las bases por causa de la humedad, 
-                    poli sombra y plástico, cuenta con un sistema de riego 
-                    de aguas lluvias, las mismas que son captadas en tanques 
-                    de almacenamiento de 2.000 y 3.000 litros lo que ha 
-                    posibilitado hacer un proceso más amigable con la naturaleza, 
-                    no se usa en ningún momento sistema de riego de acueducto por 
-                    varias razones de tipo ambiental.
-                </p>
-                <div class="intro-icons">
-                    <div class="intro-icon-card">
-                        <i class="fa-solid fa-mountain"></i>
-                        <span class="detalle-evento">
-                            Naturaleza
-                        </span>
-                    </div>
-                    <div class="intro-icon-card">
-                        <i class="fa-solid fa-people-group"></i>
-                        <span class="detalle-evento">
-                            Comunidad
-                        </span>
-                    </div>
-                    <div class="intro-icon-card">
-                        <i class="fa-solid fa-seedling"></i>
-                        <span class="detalle-evento">
-                            Territorio
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="main-imagen">
-                <img src="<?php echo $base_url; ?>assets/img/index/turismo3.jpg" alt="">
-            </div>
-        </div>
+<!-- CONTENIDO -->
+<section class="destino-container">
+    <!-- DESTACADO -->
+    <div class="destino-highlight">
+        <h2>
+            El significado de “Pundé”
+        </h2>
+        <p>
+            El término “Pundé” corresponde al nombre común
+            en lengua materna Pastos de una especie nativa
+            también conocida como “palo mote” o “caspi mote”,
+            utilizada tradicionalmente para cercas vivas y
+            madera. Gracias a su fácil propagación mediante
+            semillas, se convierte en un símbolo de vida,
+            permanencia y conexión con el territorio.
+        </p>
     </div>
-</section>
 
-<!-- EXPERIENCIAS -->
-<section class="dark-section">
-    <div class="destino-container">
-        <div class="main-texto">
-            <span>
-                EXPERIENCIAS
-            </span>
+    <!-- BLOQUE 1 -->
+    <div class="destino-grid">
+        <img src="<?php echo $base_url; ?>assets/img/index/turismo3.jpg" alt="">
+        <div class="destino-texto">
             <h2>
-                Actividades del recorrido
+                Conservación y restauración ecológica
             </h2>
-        </div>
-        <div class="experiencias-grid">
-
-            <!-- CARD 1 -->
-            <div class="experiencia-card">
-                <img src="assets/img/destinos/punde/actividad1.jpg"
-                    alt="" class="img-evento"
-                    onclick="abrirImagen(this.src)">
-                <div class="experiencia-info">
-                    <i class="fa-solid fa-fire"></i>
-                    <h3>
-                        Avtividad 1
-                    </h3>
-                    <p>
-                        Espacios nocturnos de narración,
-                        música tradicional y diálogo con
-                        sabedores indígenas.
-                    </p>
-                </div>
-            </div>
-
-            <!-- CARD 2 -->
-            <div class="experiencia-card">
-                <img src="assets/img/destinos/punde/actividad2.jpg"
-                     alt="" class="img-evento"
-                    onclick="abrirImagen(this.src)">
-                <div class="experiencia-info">
-                    <i class="fa-solid fa-bowl-food"></i>
-                    <h3>
-                        Avtividad 2
-                    </h3>
-                    <p>
-                        Degustación de bebidas,
-                        dulces y platos típicos
-                        preparados por la comunidad.
-                    </p>
-                </div>
-            </div>
-
-            <!-- CARD 3 -->
-            <div class="experiencia-card">
-                <img src="assets/img/destinos/punde/actividad3.jpg"
-                     alt="" class="img-evento"
-                    onclick="abrirImagen(this.src)">
-                <div class="experiencia-info">
-                    <i class="fa-solid fa-tree"></i>
-                    <h3>
-                        Avtividad 3
-                    </h3>
-                    <p>
-                        Recorridos guiados por senderos
-                        naturales y lugares sagrados
-                        del territorio andino.
-                    </p>
-                </div>
-            </div>
+            <p>
+                El Vivero Pundé Intimakuna se estableció en
+                mayo del año 2018 en el marco de la
+                convocatoria concursable “Sur Sostenible”,
+                con el apoyo de la Secretaría de Agricultura
+                y Ambiente Sostenible de la Gobernación de
+                Nariño, GEF - PNUD y liderado por la Fundación
+                Intimakuna desde su programa de territorio
+                y medio ambiente.
+            </p>
+            <p>
+                Su propósito principal es la conservación y
+                protección de la fauna y flora silvestre local
+                mediante la propagación por semillas y estolones
+                de árboles nativos, frailejones, flores y
+                frutales destinados a procesos de restauración
+                ecológica en las comunidades locales.
+            </p>
         </div>
     </div>
-</section>
 
-<!-- SECCION DESTACADA -->
-<section class="light-section">
-    <div class="destino-container">
-        <div class="main-grid">
-            <div class="main-imagen">
-                <img src="assets/img/destinos/punde/experiencia.jpg"
-                     alt="">
-            </div>
-            <div class="main-texto">
-                <span>
-                    PARA TÍ
-                </span>
-                <h2>
-                    ¿QUÉ INCLUYE?
-                </h2>
-                <p>
-                    - Entrada el las instalaciones del vivero. <br>
-                    - Almuerzo con comida tipica de la región <br>
-                    - Guia turistico <br>
-                    - Transporte en rutas de distancia. <br>
-                    - Seguro de asistencia médica.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- GALERIA -->
-<section class="dark-section">
-    <div class="destino-container">
-        <div class="main-texto">
-            <span>
-                GALERÍA
-            </span>
+    <!-- BLOQUE 2 -->
+    <div class="destino-grid">
+        <div class="destino-texto">
             <h2>
-                Vive la experiencia
+                Infraestructura sostenible
             </h2>
+            <p>
+                Las instalaciones del vivero están ubicadas en
+                la Vereda Chapud del Resguardo Indígena de
+                Muellamues, municipio de Guachucal, Nariño.
+                Cuenta con un área aproximada de 13 metros
+                por 10 metros y está construido con materiales
+                amigables con el ambiente como guadua,
+                varengas, polisombra y plástico.
+            </p>
+            <p>
+                Además, posee un sistema de recolección y
+                almacenamiento de aguas lluvias en tanques
+                de 2.000 y 3.000 litros, permitiendo un
+                funcionamiento más sostenible y evitando
+                el uso de sistemas de riego provenientes
+                del acueducto.
+            </p>
         </div>
-        <div class="galeria-grid-destino">
-            <img src="assets/img/destinos/punde/punde_galeria1.jpg"
-                 alt="" class="img-evento"
-                    onclick="abrirImagen(this.src)">
-            <img src="assets/img/destinos/punde/punde_galeria2.jpg"
-                 alt="" class="img-evento"
-                    onclick="abrirImagen(this.src)">
-            <img src="assets/img/destinos/punde/punde_galeria3.jpg"
-                 alt="" class="img-evento"
-                    onclick="abrirImagen(this.src)">
-            <img src="assets/img/destinos/punde/punde_galeria4.jpg"
-                 alt="" class="img-evento"
-                    onclick="abrirImagen(this.src)">
+        <img src="assets/img/destinos/punde/punde1.jpg"
+             alt="Infraestructura">
+    </div>
+
+    <!-- BLOQUE 3 -->
+    <div class="destino-grid">
+        <img src="assets/img/destinos/punde/punde2.jpg"
+             alt="Especies Nativas">
+        <div class="destino-texto">
+            <h2>
+                Propagación de especies nativas
+            </h2>
+            <p>
+                Actualmente el vivero cuenta con germinadores
+                de especies nativas como arrayán, capote,
+                cerote, charmuelán, chilca blanca, encino,
+                motilón, pandala y pumamaque.
+            </p>
+            <p>
+                También dispone de una gran variedad de
+                suculentas, flores ornamentales y frutales
+                como aguacate, uvilla, tomate de árbol,
+                lulo y tomate de carne, fortaleciendo así
+                los procesos de soberanía ambiental y
+                recuperación del ecosistema local.
+            </p>
         </div>
     </div>
-</section>
 
-<!-- CTA FINAL -->
+    <!-- BLOQUE 4 -->
+    <div class="destino-grid">
+        <div class="destino-texto">
+            <h2>
+                Educación ambiental comunitaria
+            </h2>
+            <p>
+                Desde el programa de Territorio y Ambiente
+                Sostenible de la Fundación Intimakuna se
+                impulsan acciones de concientización y
+                fortalecimiento del sentido de pertenencia
+                hacia la naturaleza y la biodiversidad.
+            </p>
+            <p>
+                En articulación con centros educativos del
+                Resguardo de Muellamues se desarrollan
+                actividades pedagógicas, juegos tradicionales,
+                mingas y jornadas ambientales en fechas
+                conmemorativas como el Día Mundial del Árbol.
+            </p>
+            <p>
+                Una de las estrategias más significativas
+                consiste en el apadrinamiento de árboles,
+                permitiendo que niños y jóvenes lleven un
+                árbol a sus hogares con el compromiso de
+                sembrarlo y cuidarlo.
+            </p>
+        </div>
+        <img src="assets/img/destinos/punde/punde3.jpg"
+             alt="Educación Ambiental">
+    </div>
+
+    <!-- GALERIA -->
+    <div class="destino-galeria">
+        <img src="assets/img/destinos/punde/vivero1.jpg"
+            class="img-evento"
+            onclick="abrirImagen(this.src)">
+        <img src="assets/img/destinos/punde/vivero2.jpg"
+            class="img-evento"
+            onclick="abrirImagen(this.src)">
+        <img src="assets/img/destinos/punde/vivero3.jpg"
+            class="img-evento"
+            onclick="abrirImagen(this.src)">
+    </div>
+
+</section>
 <section class="cta-destino">
     <div class="cta-overlay"></div>
     <div class="cta-content">
@@ -233,7 +190,6 @@ include 'includes/config.php';
             junto a las comunidades indígenas
             del sur de Nariño.
         </p>
-        
         <a href="reservas.php"
            class="btn">
             Reservar ahora
@@ -244,8 +200,6 @@ include 'includes/config.php';
         </a>
     </div>
 </section>
-
-<!-- FOOTER -->
 <?php include 'includes/footer.php'; ?>
 
     <!-- MODAL IMAGEN -->
@@ -265,5 +219,6 @@ include 'includes/config.php';
         document.getElementById("modalImagen").style.display = "none";
     }
     </script>
+
 </body>
 </html>

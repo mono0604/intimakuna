@@ -61,13 +61,20 @@ style="background-image:url('assets/img/galeria/portada_galeria.jpg');">
         </p>
     </div>
     <div class="videos-galeria-grid">
-        <?php foreach($videos as $video): ?>
-        <div class="video-card">
+        <?php foreach($videos as $index => $video): ?>
+        <div class="video-card extra-video <?php echo $index >= 2 ? 'oculto' : ''; ?>">
             <iframe src="<?php echo $video['url_video']; ?>"
                     title="<?php echo $video['titulo']; ?>"
                     allowfullscreen></iframe>
         </div>
         <?php endforeach; ?>
+    </div>
+    <div class="btn-ver-mas-container">
+        <button class="btn"
+                onclick="mostrarVideos()"
+                id="btnVideos">
+            Ver más videos
+        </button>
     </div>
 </section>
 
@@ -80,9 +87,9 @@ style="background-image:url('assets/img/galeria/portada_galeria.jpg');">
             compartidas por nuestra comunidad.
         </p>
     </div>
-    <div class="imagenes-grid">
-        <?php foreach($imagenes as $img): ?>
-        <div class="imagen-item">
+    <div class="imagenes-grid" id="imagenesContainer">
+        <?php foreach($imagenes as $index => $img): ?>
+        <div class="imagen-item extra-imagen <?php echo $index >= 6 ? 'oculto' : ''; ?>">
             <img src="assets/img/admin/galeria/<?php echo $img['imagen']; ?>"
                  alt="">
             <div class="imagen-overlay">
@@ -92,11 +99,85 @@ style="background-image:url('assets/img/galeria/portada_galeria.jpg');">
             </div>
         </div>
         <?php endforeach; ?>
+    </div>  
+    <div class="btn-ver-mas-container">
+        <button class="btn"
+                onclick="mostrarImagenes()"
+                id="btnImagenes">
+            Ver más imágenes
+        </button>
     </div>
 </section>
 
 <!-- FOOTER -->
 <?php include 'includes/footer.php'; ?>
+
+<script>
+
+/* ========================= */
+/* VIDEOS */
+/* ========================= */
+const videos = document.querySelectorAll('.video-card');
+const btnVideos = document.getElementById('btnVideos');
+function mostrarVideosIniciales(){
+    videos.forEach((video, index) => {
+        if(index < 3){
+            video.classList.remove('video-oculto');
+        }else{
+            video.classList.add('video-oculto');
+        }
+    });
+}
+mostrarVideosIniciales();
+btnVideos.addEventListener('click', () => {
+    const expandido = btnVideos.dataset.expandido === 'true';
+    if(!expandido){
+        videos.forEach(video => {
+            video.classList.remove('video-oculto');
+        });
+        btnVideos.innerHTML = 'Ver menos videos';
+        btnVideos.dataset.expandido = 'true';
+    }else{
+        mostrarVideosIniciales();
+        btnVideos.innerHTML = 'Ver más videos';
+        btnVideos.dataset.expandido = 'false';
+    }
+});
+
+/* ========================= */
+/* IMAGENES */
+/* ========================= */
+
+const imagenes = document.querySelectorAll('.imagen-item');
+const btnImagenes = document.getElementById('btnImagenes');
+
+function mostrarImagenesIniciales(){
+    imagenes.forEach((img, index) => {
+        if(index < 6){
+            img.classList.remove('imagen-oculta');
+        }else{
+            img.classList.add('imagen-oculta');
+        }
+    });
+}
+mostrarImagenesIniciales();
+btnImagenes.addEventListener('click', () => {
+    const expandido = btnImagenes.dataset.expandido === 'true';
+    if(!expandido){
+        imagenes.forEach(img => {
+            img.classList.remove('imagen-oculta');
+        });
+        btnImagenes.innerHTML = 'Ver menos imágenes';
+        btnImagenes.dataset.expandido = 'true';
+    }else{
+        mostrarImagenesIniciales();
+        btnImagenes.innerHTML = 'Ver más imágenes';
+        btnImagenes.dataset.expandido = 'false';
+    }
+});
+
+</script>
+
 
 </body>
 </html>

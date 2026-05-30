@@ -10,7 +10,6 @@ $noticias = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -21,9 +20,7 @@ $noticias = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-
 <body>
-
 <?php include 'includes/header.php'; ?>
 
 <!-- HERO -->
@@ -48,13 +45,12 @@ style="background-image:url('assets/img/admin/noticias/portada_noticias.jpg');">
             Últimas Publicaciones
         </h2>
     </div>
-
     <div class="noticias-grid">
         <?php foreach($noticias as $noticia): ?>
-        <div class="noticia-card">
-            <img src="assets/img/admin/noticias/<?php echo $noticia['imagen']; ?>"
+        <div class="evento-card">
+            <img src="admin/assets/img/noticias/<?php echo $noticia['imagen']; ?>"
                  alt="">
-            <div class="noticia-content">
+            <div class="evento-content"><br>
                 <span class="categoria-noticia">
                     <?php echo $noticia['categoria']; ?>
                 </span>
@@ -63,8 +59,8 @@ style="background-image:url('assets/img/admin/noticias/portada_noticias.jpg');">
                 </h3>
                 <p>
                     <?php echo $noticia['resumen']; ?>
-                </p>
-                <a href="noticia.php?id=<?php echo $noticia['id_noticia']; ?>"
+                </p><br>
+                <a href="detalle_noticia.php?id=<?php echo $noticia['id_noticia']; ?>"
                    class="btn">
                     Leer Más
                 </a>
@@ -73,7 +69,6 @@ style="background-image:url('assets/img/admin/noticias/portada_noticias.jpg');">
         <?php endforeach; ?>
     </div>
 </section>
-
 <?php include 'includes/footer.php'; ?>
 
 </body>

@@ -65,9 +65,8 @@ $eventos = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <?php echo $evento['id_evento']; ?>
                         </td>
                         <td>
-                            <img src="../assets/img/admin/eventos/<?php echo $evento['imagen']; ?>"
+                            <img src="assets/img/eventos/<?php echo $evento['imagen']; ?>"
                                  class="admin-img">
-
                         </td>
                         <td>
                             <?php echo $evento['titulo']; ?>

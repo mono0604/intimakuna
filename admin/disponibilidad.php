@@ -1,133 +1,87 @@
 <?php
-
 session_start();
-
 if(!isset($_SESSION['admin'])){
     header("Location: login.php");
     exit();
 }
-
 require '../config/database.php';
-
 $pagina_actual = 'disponibilidad';
 
 /* ========================= */
 /* OBTENER DISPONIBILIDAD */
 /* ========================= */
-
 $sql = "SELECT *
-        FROM disponibilidad_experiencias
+        FROM disponibilidad_experiencias de
+        JOIN experiencias e ON de.id_experiencia = e.id_experiencia 
         ORDER BY fecha_disponible ASC";
-
 $stmt = $conexion->prepare($sql);
-
 $stmt->execute();
-
 $disponibilidad = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
-
     <title>Disponibilidad</title>
-
     <link rel="stylesheet"
           href="../assets/css/style.css">
-
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
 </head>
-
 <body>
-
 <div class="admin-panel">
 
     <!-- SIDEBAR -->
-
     <?php include 'includes/sidebar.php'; ?>
 
     <!-- CONTENIDO -->
-
     <main class="admin-content">
 
         <!-- TOPBAR -->
-
         <div class="admin-topbar">
-
             <h1>
                 Disponibilidad de Experiencias
             </h1>
-
             <a href="agregar_disponibilidad.php"
                class="btn">
-
                 <i class="fa-solid fa-plus"></i>
-
                 Nueva Fecha
-
             </a>
-
         </div>
 
         <!-- TABLA -->
-
         <div class="admin-tabla-container">
-
             <table class="admin-tabla">
-
                 <thead>
-
                     <tr>
-
                         <th>ID</th>
-
                         <th>Experiencia</th>
-
                         <th>Fecha</th>
-
                         <th>Cupos Totales</th>
-
                         <th>Cupos Disponibles</th>
-
                         <th>Estado</th>
-
                         <th>Acciones</th>
-
                     </tr>
-
                 </thead>
-
                 <tbody>
-
                 <?php foreach($disponibilidad as $item){ ?>
-
                     <tr>
-
                         <td>
                             <?php echo $item['id_disponibilidad']; ?>
                         </td>
-
                         <td>
-                            <?php echo $item['experiencia']; ?>
+                            <?php echo $item['titulo']; ?>
                         </td>
-
                         <td>
                             <?php echo $item['fecha_disponible']; ?>
                         </td>
-
                         <td>
                             <?php echo $item['cupos_totales']; ?>
                         </td>
-
                         <td>
                             <?php echo $item['cupos_disponibles']; ?>
                         </td>

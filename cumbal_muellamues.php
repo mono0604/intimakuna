@@ -42,11 +42,11 @@ include 'includes/config.php';
 </section>
 
 <!-- INTRO -->
-<section class="light-section">
+<section class="destino-intro">
     <div class="destino-container">
-        <div class="main-grid">
-            <div class="main-texto">
-                <span>
+        <div class="intro-grid">
+            <div class="intro-texto">
+                <span class="detalle-etiqueta">
                     TURISMO VIVENCIAL
                 </span>
                 <h2>
@@ -71,25 +71,25 @@ include 'includes/config.php';
                 <div class="intro-icons">
                     <div class="intro-icon-card">
                         <i class="fa-solid fa-mountain"></i>
-                        <span class="detalle-evento">
+                        <span>
                             Naturaleza
                         </span>
                     </div>
                     <div class="intro-icon-card">
                         <i class="fa-solid fa-people-group"></i>
-                        <span class="detalle-evento">
+                        <span>
                             Comunidad
                         </span>
                     </div>
                     <div class="intro-icon-card">
                         <i class="fa-solid fa-seedling"></i>
-                        <span class="detalle-evento">
+                        <span>
                             Territorio
                         </span>
                     </div>
                 </div>
             </div>
-            <div class="main-imagen">
+            <div class="intro-imagen">
                 <img src="<?php echo $base_url; ?>assets/img/index/turismo2.jpg" alt="">
             </div>
         </div>
@@ -97,7 +97,7 @@ include 'includes/config.php';
 </section>
 
 <!-- EXPERIENCIAS -->
-<section class="dark-section">
+<section class="experiencias-section">
     <div class="destino-container">
         <div class="section-title">
             <span>
@@ -167,14 +167,14 @@ include 'includes/config.php';
 </section>
 
 <!-- SECCION DESTACADA -->
-<section class="light-section">
+<section class="bloque-destacado">
     <div class="destino-container">
-        <div class="main-grid">
-            <div class="main-imagen">
+        <div class="bloque-grid">
+            <div class="bloque-imagen">
                 <img src="assets/img/destinos/cumbal_muellamues/experiencia.jpg"
                      alt="">
             </div>
-            <div class="main-texto">
+            <div class="bloque-texto">
                 <span>
                     COSMOVISIÓN INDÍGENA
                 </span>
@@ -201,7 +201,7 @@ include 'includes/config.php';
 </section>
 
 <!-- GALERIA -->
-<section class="dark-section">
+<section class="galeria-destino">
     <div class="destino-container">
         <div class="section-title">
             <span>

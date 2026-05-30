@@ -52,106 +52,8 @@ body{
     color:#333;
 }
 
-/* HEADER */
-.header{
-    width:100%;
-    height:90px;
-    background:white;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:0 8%;
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:1000;
-    box-shadow:0 2px 15px rgba(0,0,0,.08);
-}
-.logo img{
-    width:150px;
-}
-
-/* NAVBAR */
-.navbar{
-    margin-left:30px;
-}
-
-.navbar ul{
-    display:flex;
-    align-items:center;
-    gap:16px;
-    list-style:none;
-    margin:0;
-    padding:0;
-    isolation:isolate;
-}
-.navbar ul li{
-    display:flex;
-    align-items:center;
-}
-.navbar a{
-    text-decoration:none;
-    color:#0ba36d;
-    font-weight:500;
-    transition:.3s;
-}
-.navbar a:hover{
-    color:#06694a;
-}
-
-/* LOGIN ADMIN */
 
 
-
-.btn-login{
-    position:relative;
-    background:linear-gradient(
-        to bottom,
-        #12c985,
-        #0ba36d
-    );
-    color:white !important;
-    padding:10px 22px;
-    border-radius:30px;
-    border:1px solid rgba(255,255,255,0.25);
-    white-space:nowrap;
-    box-shadow:
-    0 6px 18px rgba(11,163,109,0.35),
-    inset 0 2px 3px rgba(255,255,255,0.35),
-    inset 0 -3px 6px rgba(0,0,0,0.12);
-    transition:.35s ease;
-}
-/* BRILLO SUPERIOR */
-.btn-login::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:-120%;
-    width:100%;
-    height:100%;
-    pointer-events:none;
-    background:linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,0.35),
-        transparent
-    );
-    transition:.7s;
-}
-/* HOVER */
-.btn-login:hover{
-    transform:translateY(-3px);
-    position:relative;
-    z-index:10;
-    box-shadow:
-    0 10px 22px rgba(0, 0, 0, 0.45),
-    inset 0 2px 3px rgba(255,255,255,0.35),
-    inset 0 -3px 6px rgba(0,0,0,0.15);
-}
-/* brillo */
-.btn-login:hover::before{
-    left:120%;
-}
 
 
 
@@ -374,6 +276,8 @@ footer{
     display:grid;
     grid-template-columns:repeat(2,1fr);
     gap:35px;
+    margin-left: 400px;
+    margin-right: 400px;
 }
 .card{
     background:white;
@@ -496,9 +400,11 @@ footer{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:30px;
+    margin-left: 200px;
+    margin-right: 200px;
 }
 .testimonio{
-    background:white;
+    background:rgb(247, 247, 247);
     padding:35px;
     border-radius:15px;
 }
@@ -705,7 +611,10 @@ footer{
     object-fit:cover;
 }
 .evento-content{
-    padding:25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 .evento-card:hover{
     transform:translateY(-10px);
@@ -899,6 +808,18 @@ footer{
     font-size:28px;
     text-align:center;
 }
+.video-oculto{
+    display:none;
+}
+.imagen-oculta{
+    display:none;
+}
+
+.btn-ver-mas-container{
+    display:flex;
+    justify-content:center;
+    margin-top:40px;
+}
 
 /* ========================= */
 /* RESPONSIVE */
@@ -907,17 +828,8 @@ footer{
 /* TABLET */
 @media(max-width:1000px){
     /* HEADER */
-    .header{
-        flex-direction:column;
-        height:auto;
-        padding:20px;
-    }
-    .navbar ul{
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:20px;
-        margin-top:15px;
-    }
+
+
 
     /* HERO */
     .hero-general-content h1,
@@ -1526,16 +1438,6 @@ footer{
     border-radius:10px;
 }
 
-/* BOTONES */
-
-
-.btn-eliminar{
-    background:#e53935;
-    color:white;
-}
-
-
-
 /* RESPONSIVE */
 
 @media(max-width:1000px){
@@ -1845,7 +1747,7 @@ footer{
     padding:40px;
     border-radius:20px;
     box-shadow:0 5px 20px rgba(0,0,0,.06);
-    max-width:900px;
+    max-width:1200px;
 }
 
 .form-group{
@@ -1883,14 +1785,9 @@ footer{
 .form-admin textarea{
     resize:none;
 }
-
-
-
-
-
-
-
-
+.preview-admin-img{
+    width: 1000px;
+}
 
 /* ========================= */
 /* TABLAS ADMIN */
@@ -1979,6 +1876,76 @@ footer{
 /* DESTINO DETALLE */
 /* ========================= */
 
+.destino-container{
+    width:85%;
+    margin:100px auto;
+}
+
+
+/* ===================================== */
+/* INTRO */
+/* ===================================== */
+.light-section{
+    padding:100px 0;
+    background:#fff;
+    width:100%;
+}
+.dark-section{
+    padding:100px 0;
+    background:#ececec;
+    width:100%;
+}
+.dark-section-img{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+.main-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+.main-texto{
+    text-align:center;
+    margin-bottom:60px;
+}
+.main-texto span{
+    color:#009970;
+    letter-spacing:2px;
+}
+.main-texto h2{
+    font-size:45px;
+    margin-bottom:25px;
+    color:#222;
+}
+
+.main-texto p{
+    line-height:2;
+    margin-bottom:20px;
+    color:#555;
+    text-align:justify;
+}
+
+.detalle-etiqueta{
+    display:inline-block;
+    background:#009970;
+    color:#fff;
+    padding:8px 20px;
+    border-radius:30px;
+    margin-bottom:20px;
+    font-size:14px;
+}
+
+.main-imagen img{
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+
+
+
 .destino-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -2052,17 +2019,17 @@ footer{
 }
 .documentos-grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:35px;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
 }
+
+
 .documento-card{
     background:white;
     padding:40px;
     border-radius:20px;
     text-align:center;
-
     box-shadow:0 10px 30px rgba(0,0,0,.08);
-
     transition:.35s ease;
 }
 .documento-card:hover{
@@ -2213,35 +2180,25 @@ footer{
 /* INTRO */
 /* ===================================== */
 
-.light-section{
+.destino-intro{
     padding:160px 0 100px;
     background:#fff;
 }
-.dark-section{
-    padding:100px 0;
-    background:#f7f7f7;
-}
-.main-grid{
+
+.intro-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:60px;
     align-items:center;
 }
-.main-texto{
-    text-align:center;
-    margin-bottom:60px;
-}
-.main-texto span{
-    color:#009970;
-    letter-spacing:2px;
-}
-.main-texto h2{
+
+.intro-texto h2{
     font-size:45px;
     margin-bottom:25px;
     color:#222;
 }
 
-.main-texto p{
+.intro-texto p{
     line-height:2;
     margin-bottom:20px;
     color:#555;
@@ -2258,7 +2215,7 @@ footer{
     font-size:14px;
 }
 
-.main-imagen img{
+.intro-imagen img{
     width:100%;
     border-radius:20px;
     box-shadow:0 10px 30px rgba(0,0,0,0.15);
@@ -2298,6 +2255,11 @@ footer{
 /* ===================================== */
 /* EXPERIENCIAS */
 /* ===================================== */
+
+.experiencias-section{
+    padding:100px 0;
+    background:#f7f7f7;
+}
 
 .section-title{
     text-align:center;
@@ -2367,9 +2329,32 @@ footer{
     background:#fff;
 }
 
+.bloque-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
 .bloque-imagen img{
     width:100%;
     border-radius:20px;
+}
+
+.bloque-texto span{
+    color:#009970;
+    letter-spacing:2px;
+}
+
+.bloque-texto h2{
+    font-size:45px;
+    margin:20px 0;
+}
+
+.bloque-texto p{
+    line-height:2;
+    margin-bottom:20px;
+    color:#555;
 }
 
 /* ===================================== */
@@ -2443,7 +2428,7 @@ footer{
 
 @media(max-width:992px){
 
-    .main-grid,
+    .intro-grid,
     .bloque-grid,
     .experiencias-grid,
     .galeria-grid-destino{
@@ -2455,7 +2440,8 @@ footer{
     }
 
     .section-title h2,
-    .main-texto h2{
+    .intro-texto h2,
+    .bloque-texto h2{
         font-size:35px;
     }
 
@@ -2467,7 +2453,7 @@ footer{
     padding:40px;
     border-radius:20px;
     margin-top:30px;
-    max-width:700px;
+    max-width:1200px;
     box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
@@ -2726,19 +2712,6 @@ footer{
 
 @media(max-width:768px){
 
-    .header{
-        height:auto;
-        padding:20px 5%;
-        flex-direction:column;
-        gap:20px;
-    }
-
-    .navbar ul{
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:18px;
-    }
-
     /* HERO / CONTENIDO */
     .hero-general,
     .hero,
@@ -2814,11 +2787,7 @@ footer{
     color:#0c3b2e;
 }
 
-.documentos-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-}
+
 
 /* RESPONSIVE */
 
@@ -2860,4 +2829,158 @@ footer{
 
 .detalle-texto p{
     margin-bottom:18px;
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+.header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 40px;
+
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(12px);
+
+    box-shadow:0 5px 25px rgba(0,0,0,.06);
+}
+
+/* ========================= */
+/* LOGO */
+/* ========================= */
+
+.logo img{
+    height:55px;
+}
+
+/* ========================= */
+/* NAVBAR */
+/* ========================= */
+
+.navbar{
+    margin-left:auto;
+}
+
+.navbar ul{
+    display:flex;
+    align-items:center;
+    gap:24px;
+
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.navbar li{
+    display:flex;
+    align-items:center;
+}
+
+.navbar a{
+    text-decoration:none;
+    color:#0ba36d;
+    font-weight:600;
+    font-size:1rem;
+
+    transition:.3s ease;
+}
+
+.navbar a:hover{
+    color:#06694a;
+    transform:translateY(-2px);
+}
+
+/* ========================= */
+/* BOTON LOGIN */
+/* ========================= */
+
+.btn-login{
+    background:#0ba36d;
+    color:white !important;
+
+    padding:12px 22px;
+    border-radius:50px;
+
+    box-shadow:0 8px 20px rgba(11,163,109,.25);
+
+    transition:.3s;
+}
+
+.btn-login:hover{
+    background:#088a5d;
+    transform:translateY(-2px);
+}
+
+/* ========================= */
+/* HAMBURGUESA */
+/* ========================= */
+
+.menu-toggle{
+    display:none;
+
+    flex-direction:column;
+    gap:5px;
+
+    background:none;
+    border:none;
+    cursor:pointer;
+}
+
+.menu-toggle span{
+    width:28px;
+    height:3px;
+
+    background:#0ba36d;
+    border-radius:10px;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media(max-width:1100px){
+
+    .menu-toggle{
+        display:flex;
+    }
+
+    .navbar{
+        position:absolute;
+
+        top:100%;
+        left:0;
+
+        width:100%;
+
+        background:white;
+
+        max-height:0;
+        overflow:hidden;
+
+        transition:.4s ease;
+    }
+
+    .navbar.active{
+        max-height:700px;
+        box-shadow:0 15px 30px rgba(0,0,0,.1);
+    }
+
+    .navbar ul{
+        flex-direction:column;
+        align-items:flex-start;
+
+        padding:25px;
+        gap:18px;
+    }
+
+    .btn-login{
+        margin-top:10px;
+    }
 }

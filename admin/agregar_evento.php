@@ -46,8 +46,8 @@ $pagina_actual = 'eventos';
                 <textarea name="descripcion"
                     id="editor"
                     placeholder="Descripción completa, reglas, criterios, cláusulas..."
-                    rows="10"></textarea> 
-
+                    rows="10"></textarea>
+                        
                 <!-- FECHA -->
                 <input type="date"
                     name="fecha_evento"
@@ -57,15 +57,17 @@ $pagina_actual = 'eventos';
                 <input type="file"
                     name="imagen"
                     required>
-                    
+
                 <!-- PDFS -->
                 <label>
                     Archivos PDF del evento
                 </label>
+
                 <input type="file"
                     name="archivos[]"
                     multiple
                     accept=".pdf">
+
                 <button type="submit"
                         class="btn">
                     Crear Evento
@@ -77,6 +79,7 @@ $pagina_actual = 'eventos';
 
 <!-- CKEDITOR -->
 <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+
 <script>
 
 ClassicEditor

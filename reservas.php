@@ -62,67 +62,81 @@
                     </div>
                 </div>
             </div>
-            <form class="reservas-form"
-                action="process/guardar_reserva.php"
-                method="POST">
-                <input type="text"
-                    name="nombre"
-                    placeholder="Nombre completo"
-                    required>
-                <input type="email"
-                    name="correo"
-                    placeholder="Correo electrónico"
-                    required>
-                <input type="text"
-                    name="telefono"
-                    placeholder="Teléfono">
-              
-                <!-- DESTINO -->
-                <select name="destino"
-                        id="destino"
+                <form class="reservas-form"
+                    action="process/guardar_reserva.php"
+                    method="POST">
+
+                    <input type="text"
+                        name="nombre"
+                        placeholder="Nombre completo"
                         required>
-                    <option value="">
-                        Seleccione un destino
-                    <option value="RUTA CUMBAL - MUELLAMUES">
-                        Ruta Cumbal - Muellamues
-                    </option>
 
-                    <option value="SOL DE LOS PASTOS">
-                        Sol de los Pastos
-                    </option>
-
-                    <option value="PUNDÉ INTIMAKUNA">
-                        Pundé Intimakuna
-                    </option>
-                </select>
-
-                <!-- FECHAS DISPONIBLES -->
-                <select name="fecha_reserva"
-                        id="fecha_reserva"
+                    <input type="email"
+                        name="correo"
+                        placeholder="Correo electrónico"
                         required>
-                    <option value="">
-                        Seleccione una fecha
-                    </option>
-                </select>
 
-                <!-- DISPONIBILIDAD -->
-                <div id="estadoDisponibilidad"></div>
+                    <input type="text"
+                        name="telefono"
+                        placeholder="Teléfono">
 
-                <!-- PERSONAS -->
-                <select name="cantidad_personas"
-                        id="cantidad_personas"
-                        required
-                        disabled>
-                    <option value="">
-                        Cantidad de personas
-                    </option>
-                </select>
-                <textarea name="mensaje"
-                        placeholder="Mensaje adicional"></textarea>
-                <button type="submit" class="btn">
-                    Reservar Ahora
-                </button>
-            </form>
+                    <!-- DESTINO -->
+                    <select name="id_experiencia"
+                            id="destino"
+                            required>
+
+                        <option value="">
+                            Seleccione un destino
+                        </option>
+
+                        <option value="1">
+                            Sol de los Pastos
+                        </option>
+
+                        <option value="2">
+                            Ruta Cumbal - Muellamues
+                        </option>
+
+                        <option value="3">
+                            Pundé Intimakuna
+                        </option>
+
+                    </select>
+                    <!-- FECHAS DISPONIBLES -->
+                    <select name="fecha_reserva"
+                            id="fecha_reserva"
+                            required>
+
+                        <option value="">
+                            Seleccione una fecha
+                        </option>
+
+                    </select>
+
+                    <!-- DISPONIBILIDAD -->
+                    <div id="estadoDisponibilidad"></div>
+
+                    <!-- PERSONAS -->
+                    <select name="cantidad_personas"
+                            id="cantidad_personas"
+                            required
+                            disabled>
+
+                        <option value="">
+                            Cantidad de personas
+                        </option>
+
+                    </select>
+
+                    <textarea name="mensaje"
+                            placeholder="Mensaje adicional"></textarea>
+
+                    <button type="submit"
+                            class="btn">
+                        Reservar Ahora
+                    </button>
+
+                </form>
         </div>
     </section>
 
@@ -136,11 +150,8 @@
 /* ========================= */
 
 const destino = document.getElementById('destino');
-
 const fecha = document.getElementById('fecha_reserva');
-
 const personas = document.getElementById('cantidad_personas');
-
 const estado = document.getElementById('estadoDisponibilidad');
 
 /* ========================= */
@@ -214,9 +225,7 @@ fecha.addEventListener('change', async () => {
     `;
 
     const response = await fetch(
-
         `process/obtener_disponibilidad.php?destino=${destino.value}&fecha=${fecha.value}`
-
     );
 
     const data = await response.json();
@@ -243,8 +252,6 @@ fecha.addEventListener('change', async () => {
 
     personas.disabled = false;
 
-    /* ESTADOS */
-
     if(data.cupos_disponibles <= 5){
 
         estado.innerHTML = `
@@ -262,8 +269,6 @@ fecha.addEventListener('change', async () => {
         `;
 
     }
-
-    /* GENERAR SELECT PERSONAS */
 
     for(let i = 1; i <= data.cupos_disponibles; i++){
 

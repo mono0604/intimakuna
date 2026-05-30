@@ -48,10 +48,10 @@ style="background-image:url('assets/img/eventos/portada_eventos.jpg');">
     <div class="eventos-grid">
         <?php foreach($eventos as $evento): ?>
         <div class="evento-card">
-            <img src="assets/img/admin/eventos/<?php echo $evento['imagen']; ?>"
+            <img src="admin/assets/img/eventos/<?php echo $evento['imagen']; ?>"
                 class="img-evento"
                 onclick="abrirImagen(this.src)">
-            <div class="evento-content">
+            <div class="evento-content"><br>
                 <span class="fecha">
                     <i class="fa-solid fa-calendar-days"></i>
                     <?php echo $evento['fecha_evento']; ?>
@@ -61,7 +61,7 @@ style="background-image:url('assets/img/eventos/portada_eventos.jpg');">
                 </h3>
                 <p>
                     <?php echo $evento['resumen']; ?>
-                </p>
+                </p><br>
                 <a href="detalle_evento.php?id=<?php echo $evento['id_evento']; ?>"
                 class="btn">
                     Ver Más

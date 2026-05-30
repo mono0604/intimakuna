@@ -81,15 +81,15 @@ if(!$disponibilidad){
                     <select name="experiencia"
                             required>
                         <option value="RUTA CUMBAL - MUELLAMUES"
-                            <?php if($disponibilidad['experiencia'] == 'RUTA CUMBAL - MUELLAMUES') echo 'selected'; ?>>
+                            <?php if($disponibilidad['id_experiencia'] == 'RUTA CUMBAL - MUELLAMUES') echo 'selected'; ?>>
                             Ruta Cumbal - Muellamues
                         </option>
                         <option value="SOL DE LOS PASTOS"
-                            <?php if($disponibilidad['experiencia'] == 'SOL DE LOS PASTOS') echo 'selected'; ?>>
+                            <?php if($disponibilidad['id_experiencia'] == 'SOL DE LOS PASTOS') echo 'selected'; ?>>
                             Sol de los Pastos
                         </option>
                         <option value="PUNDÉ INTIMAKUNA"
-                            <?php if($disponibilidad['experiencia'] == 'PUNDÉ INTIMAKUNA') echo 'selected'; ?>>
+                            <?php if($disponibilidad['id_experiencia'] == 'PUNDÉ INTIMAKUNA') echo 'selected'; ?>>
                             Pundé Intimakuna
                         </option>
                     </select>

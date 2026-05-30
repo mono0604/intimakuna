@@ -1,12 +1,17 @@
 <aside class="sidebar-admin">
 
     <!-- LOGO -->
-    <div class="sidebar-logo">
-        <a href="../index.php">
-            <img src="../assets/img/logo.png" alt="">
-        </a>
+<div class="sidebar-logo">
+
+    <a href="../index.php">
+
+        <img src="../assets/img/logo.png" alt="">
+
         <h2>INTIMAKUNA</h2>
-    </div>
+
+    </a>
+
+</div>
 
     <!-- MENU SUPERIOR -->
     <ul class="sidebar-top">

@@ -74,7 +74,7 @@ $noticias = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         </td>
                         <td>
 
-                            <img src="../assets/img/admin/noticias/<?php echo $noticia['imagen']; ?>"
+                            <img src="assets/img/noticias/<?php echo $noticia['imagen']; ?>"
                                  class="tabla-img">
                         </td>
                         <td>

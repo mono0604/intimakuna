@@ -32,7 +32,7 @@ if(session_status() === PHP_SESSION_NONE){
                 </a>
             </li>
             <li>
-                <a href="<?php echo $base_url; ?>index.php#catalogo">
+                <a href="<?php echo $base_url; ?>experiencias.php">
                     experiencias
                 </a>
             </li>

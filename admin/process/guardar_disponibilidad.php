@@ -1,71 +1,83 @@
 <?php
-session_start();
-require '../../config/database.php';
-$experiencia = $_POST['experiencia'];
-$fecha = $_POST['fecha_disponible'];
-$cupos = $_POST['cupos_totales'];
 
-/* ========================= */
-/* INSERTAR */
-/* ========================= */
-/* ========================= */
-/* VALIDAR DUPLICADOS */
-/* ========================= */
-$sqlValidar = "SELECT *
-               FROM disponibilidad_experiencias
-               WHERE experiencia = :experiencia
-               AND fecha_disponible = :fecha";
-$stmtValidar = $conexion->prepare($sqlValidar);
-$stmtValidar->bindParam(':experiencia', $experiencia);
-$stmtValidar->bindParam(':fecha', $fecha);
-$stmtValidar->execute();
-$existe = $stmtValidar->fetch(PDO::FETCH_ASSOC);
+include '../../config/database.php';
 
-/* SI YA EXISTE */
-if($existe){
-    echo "
-    <!DOCTYPE html>
-    <html lang='es'>
-    <head>
-    <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-    </head>
-    <body>
-    <script>
-    Swal.fire({
-        icon: 'warning',
-        title: 'Disponibilidad duplicada',
-        text: 'Ya existe esa experiencia para esa fecha.',
-        confirmButtonColor: '#0ba36d'
-    }).then(() => {
-        window.location = '../agregar_disponibilidad.php';
-    });
-    </script>
-    </body>
-    </html>
-    ";
-    exit();
-}
+if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-$sql = "INSERT INTO disponibilidad_experiencias(
-            experiencia,
+    $id_experiencia = $_POST['id_experiencia'];
+    $fecha_disponible = $_POST['fecha_disponible'];
+    $cupos_totales = $_POST['cupos_totales'];
+
+    try{
+
+        /* ========================= */
+        /* VALIDAR DUPLICADOS */
+        /* ========================= */
+
+        $sqlValidar = "SELECT *
+                       FROM disponibilidad_experiencias
+                       WHERE id_experiencia = :id_experiencia
+                       AND fecha_disponible = :fecha";
+
+        $stmtValidar = $conexion->prepare($sqlValidar);
+
+        $stmtValidar->bindParam(':id_experiencia', $id_experiencia);
+        $stmtValidar->bindParam(':fecha', $fecha_disponible);
+
+        $stmtValidar->execute();
+
+        if($stmtValidar->rowCount() > 0){
+
+            echo "
+
+            <script>
+                alert('Ya existe disponibilidad para esta fecha.');
+                window.history.back();
+            </script>
+
+            ";
+
+            exit();
+
+        }
+
+        /* ========================= */
+        /* INSERTAR DISPONIBILIDAD */
+        /* ========================= */
+
+        $sql = "INSERT INTO disponibilidad_experiencias
+        (
+            id_experiencia,
             fecha_disponible,
             cupos_totales,
             cupos_disponibles
         )
-        VALUES(
-            :experiencia,
+        VALUES
+        (
+            :id_experiencia,
             :fecha,
             :cupos_totales,
             :cupos_disponibles
         )";
-$stmt = $conexion->prepare($sql);
-$stmt->bindParam(':experiencia', $experiencia);
-$stmt->bindParam(':fecha', $fecha);
-$stmt->bindParam(':cupos_totales', $cupos);
-$stmt->bindParam(':cupos_disponibles', $cupos);
-$stmt->execute();
-header("Location: ../disponibilidad.php");
 
-exit();
+        $stmt = $conexion->prepare($sql);
 
+        $stmt->bindParam(':id_experiencia', $id_experiencia);
+        $stmt->bindParam(':fecha', $fecha_disponible);
+        $stmt->bindParam(':cupos_totales', $cupos_totales);
+        $stmt->bindParam(':cupos_disponibles', $cupos_totales);
+
+        $stmt->execute();
+
+        header("Location: ../disponibilidad.php");
+
+        exit();
+
+    }catch(PDOException $e){
+
+        echo "Error: " . $e->getMessage();
+
+    }
+
+}
 ?>

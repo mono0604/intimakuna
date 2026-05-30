@@ -106,8 +106,8 @@ if(!$noticia){
                 <!-- IMAGEN ACTUAL -->
                 <div class="form-group">
                     <label>Imagen Actual</label>
-                    <img src="../assets/img/noticias/<?php echo $noticia['imagen']; ?>"
-                         class="preview-admin">
+                    <img src="assets/img/noticias/<?php echo $noticia['imagen']; ?>"
+                         class="preview-admin-img">
                 </div>
 
                 <!-- NUEVA IMAGEN -->

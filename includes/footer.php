@@ -26,3 +26,22 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+
+const menuToggle = document.getElementById('menuToggle');
+const navbar = document.querySelector('.navbar');
+
+if(menuToggle){
+
+    menuToggle.addEventListener('click', () => {
+
+        navbar.classList.toggle('active');
+
+    });
+
+}
+
+</script>

@@ -13,7 +13,7 @@ if($destino && !$fecha){
 
     $sql = "SELECT *
             FROM disponibilidad_experiencias
-            WHERE experiencia = :destino
+            WHERE id_experiencia = :destino
             AND cupos_disponibles > 0
             ORDER BY fecha_disponible ASC";
 
@@ -25,7 +25,11 @@ if($destino && !$fecha){
 
     $fechas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+    header('Content-Type: application/json');
+
     echo json_encode($fechas);
+
+    exit();
 
 }
 
@@ -37,7 +41,7 @@ if($destino && $fecha){
 
     $sql = "SELECT *
             FROM disponibilidad_experiencias
-            WHERE experiencia = :destino
+            WHERE id_experiencia = :destino
             AND fecha_disponible = :fecha
             LIMIT 1";
 
@@ -50,6 +54,11 @@ if($destino && $fecha){
 
     $dato = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    header('Content-Type: application/json');
+
     echo json_encode($dato);
 
+    exit();
+
 }
+?>

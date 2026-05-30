@@ -4,12 +4,10 @@ if(!isset($_SESSION['admin'])){
     header("Location: login.php");
     exit();
 }
-$pagina_actual = 'noticias';
+$pagina_actual = 'eventos';
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -23,92 +21,81 @@ $pagina_actual = 'noticias';
 
 <body>
 <div class="admin-panel">
-
     <!-- SIDEBAR -->
-
     <?php include 'includes/sidebar.php'; ?>
-
     <!-- CONTENIDO -->
     <main class="admin-content">
-        <div class="admin-topbar">
-            <h1>
-                Agregar Nueva Noticia
-            </h1>
-        </div>
-        <!-- FORMULARIO -->
-        <form action="process/guardar_noticia.php"
-              method="POST"
-              enctype="multipart/form-data"
-              class="form-admin">
+        <div class="admin-form-box">
+            <form action="process/guardar_noticia.php"
+                method="POST"
+                enctype="multipart/form-data"
+                class="admin-form">
 
-            <!-- TITULO -->
-            <div class="form-group">
-                <label>
-                    Título
-                </label>
+                <!-- TITULO -->
                 <input type="text"
-                       name="titulo"
-                       required>
-            </div>
+                    name="titulo"
+                    placeholder="Título de la Noticia"
+                    required>
 
-            <!-- RESUMEN -->
-            <div class="form-group">
-                <label>
-                    Resumen
-                </label>
+                <!-- RESUMEN -->
                 <textarea name="resumen"
-                          rows="4"
-                          required></textarea>
-            </div>
+                        placeholder="Resumen corto de la Noticia"
+                        required></textarea>
 
-            <!-- CONTENIDO -->
-            <div class="form-group">
-                <label>
-                    Contenido Completo
-                </label>
+                <!-- DESCRIPCION COMPLETA -->
                 <textarea name="contenido"
-                          rows="10"
-                          required></textarea>
-            </div>
+                    id="editor"
+                    placeholder="Descripción completa de la Noticia"
+                    rows="10"></textarea>
+     
+                <!-- CATEGORIA -->
+                <div class="form-group">
+                    <label>
+                        Categoría
+                    </label>
 
-            <!-- CATEGORIA -->
-            <div class="form-group">
+                    <select name="categoria" required>
+                        <option value="">
+                            Seleccione una categoría
+                        </option>
+                        <option value="Noticia">
+                            Noticia
+                        </option>
+                        <option value="Convocatoria">
+                            Convocatoria
+                        </option>
+                    </select>
+                </div>
+
                 <label>
-                    Categoría
+                    <strong>Imagen</strong>
                 </label>
 
-                <select name="categoria" required>
-                    <option value="">
-                        Seleccione una categoría
-                    </option>
-                    <option value="Noticia">
-                        Noticia
-                    </option>
-                    <option value="Convocatoria">
-                        Convocatoria
-                    </option>
-                </select>
-            </div>
-
-            <!-- IMAGEN -->
-            <div class="form-group">
-                <label>
-                    Imagen
-                </label>
+                <!-- IMAGEN -->
                 <input type="file"
-                       name="imagen"
-                       accept="image/*"
-                       required>
-            </div>
+                    name="imagen"
+                    required>
 
-            <!-- BOTON -->
-            <button type="submit"
-                    class="btn">
-                <i class="fa-solid fa-floppy-disk"></i>
-                Publicar Noticia
-            </button>
-        </form>
+                <button type="submit"
+                        class="btn">
+                    Crear Evento
+                </button>
+            </form>
+        </div>
     </main>
 </div>
+
+<!-- CKEDITOR -->
+<script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+
+<script>
+
+ClassicEditor
+.create(document.querySelector('#editor'))
+.catch(error => {
+    console.error(error);
+});
+
+</script>
 </body>
 </html>

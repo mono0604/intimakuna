@@ -89,82 +89,156 @@ $videos = $stmt_vid->fetchAll(PDO::FETCH_ASSOC);
         </div>
 
         <!-- IMAGENES -->
-        <div class="table-container">
-            <h2>Imágenes</h2>
-            <table class="admin-table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Imagen</th>
-                        <th>Título</th>
-                        <th>Acción</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach($imagenes as $img): ?>
-                    <tr>
-                        <td>
-                            <?php echo $img['id_imagen']; ?>
-                        </td>
-                        <td>
-                            <img src="../assets/img/admin/galeria/<?php echo $img['imagen']; ?>"
-                                 class="admin-img">
-                        </td>
-                        <td>
-                            <?php echo $img['titulo']; ?>
-                        </td>
-                        <td>
-                            <a href="process/eliminar_imagen.php?id=<?php echo $img['id_imagen']; ?>"
-                               class="btn-delete">
-                                Eliminar
-                            </a>
-                        </td>
-                    </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
+<div class="table-container">
+    <h2>Imágenes</h2>
+    <div id="contenedorImagenesAdmin">
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Imagen</th>
+                    <th>Título</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($imagenes as $index => $img): ?>
+                <tr class="fila-imagen-admin <?php echo $index >= 5 ? 'imagen-oculta' : ''; ?>">
+                    <td>
+                        <?php echo $img['id_imagen']; ?>
+                    </td>
+                    <td>
+                        <img src="../assets/img/admin/galeria/<?php echo $img['imagen']; ?>"
+                             class="admin-img">
+                    </td>
+                    <td>
+                        <?php echo $img['titulo']; ?>
+                    </td>
+                    <td>
+                        <a href="process/eliminar_imagen.php?id=<?php echo $img['id_imagen']; ?>"
+                           class="btn-delete">
+                            Eliminar
+                        </a>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <?php if(count($imagenes) > 5): ?>
+    <div class="btn-ver-mas-container">
+        <button id="btnImagenesAdmin"
+                class="btn"
+                data-expandido="false">
+            Ver más imágenes
+        </button>
+    </div>
+    <?php endif; ?>
+</div>
 
         <!-- VIDEOS -->
-        <div class="table-container">
-            <h2>Videos</h2>
-            <table class="admin-table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Título</th>
-                        <th>URL</th>
-                        <th>Acción</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach($videos as $video): ?>
-                    <tr>
-                        <td>
-                            <?php echo $video['id_video']; ?>
-                        </td>
-                        <td>
-                            <?php echo $video['titulo']; ?>
-                        </td>
-                        <td>
-                            <?php echo $video['url_video']; ?>
-                        </td>
-                        <td>
-                            <a href="process/eliminar_video.php?id=<?php echo $video['id_video']; ?>"
-                               class="btn-delete">
-                                Eliminar
-                            </a>
-                            <a href="process/editar_video.php?id=<?php echo $video['id_video']; ?>"
-                               class="btn">
-                                Editar
-                            </a>
-                        </td>
-                    </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
-    </main>
+<div class="table-container">
+    <h2>Videos</h2>
+    <div id="contenedorVideosAdmin">
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>URL</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($videos as $index => $video): ?>
+                <tr class="fila-video-admin <?php echo $index >= 5 ? 'video-oculto' : ''; ?>">
+                    <td>
+                        <?php echo $video['id_video']; ?>
+                    </td>
+                    <td>
+                        <?php echo $video['titulo']; ?>
+                    </td>
+                    <td>
+                        <?php echo $video['url_video']; ?>
+                    </td>
+                    <td>
+                        <a href="process/eliminar_video.php?id=<?php echo $video['id_video']; ?>"
+                           class="btn-delete">
+                            Eliminar
+                        </a>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <?php if(count($videos) > 5): ?>
+    <div class="btn-ver-mas-container">
+        <button id="btnVideosAdmin"
+                class="btn"
+                data-expandido="false">   
+            Ver más videos
+        </button>
+    </div>
+    <?php endif; ?>
 </div>
+</main>
+</div>
+
+<script>
+/* ========================= */
+/* VIDEOS ADMIN */
+/* ========================= */
+
+const filasVideos = document.querySelectorAll('.fila-video-admin');
+const btnVideosAdmin = document.getElementById('btnVideosAdmin');
+if(btnVideosAdmin){
+    btnVideosAdmin.addEventListener('click', () => {
+        const expandido = btnVideosAdmin.dataset.expandido === 'true';
+        if(!expandido){
+            filasVideos.forEach(fila => {
+                fila.classList.remove('video-oculto');
+            });
+            btnVideosAdmin.innerHTML = 'Ver menos videos';
+            btnVideosAdmin.dataset.expandido = 'true';
+        }else{
+            filasVideos.forEach((fila, index) => {
+                if(index >= 5){
+                    fila.classList.add('video-oculto');
+                }
+            });
+            btnVideosAdmin.innerHTML = 'Ver más videos';
+            btnVideosAdmin.dataset.expandido = 'false';
+        }
+    });
+}
+
+/* ========================= */
+/* IMAGENES ADMIN */
+/* ========================= */
+const filasImagenes = document.querySelectorAll('.fila-imagen-admin');
+const btnImagenesAdmin = document.getElementById('btnImagenesAdmin');
+if(btnImagenesAdmin){
+    btnImagenesAdmin.addEventListener('click', () => {
+        const expandido = btnImagenesAdmin.dataset.expandido === 'true';
+        if(!expandido){
+            filasImagenes.forEach(fila => {
+                fila.classList.remove('imagen-oculta');
+            });
+            btnImagenesAdmin.innerHTML = 'Ver menos imágenes';
+            btnImagenesAdmin.dataset.expandido = 'true';
+        }else{
+            filasImagenes.forEach((fila, index) => {
+                if(index >= 5){
+                    fila.classList.add('imagen-oculta');
+                }
+            });
+            btnImagenesAdmin.innerHTML = 'Ver más imágenes';
+            btnImagenesAdmin.dataset.expandido = 'false';
+        }
+    });
+}
+
+</script>
 </body>
 </html>

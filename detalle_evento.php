@@ -45,7 +45,7 @@ $archivos = $stmtArchivos->fetchAll(PDO::FETCH_ASSOC);
 
 <!-- HERO -->
 <section class="hero-general"
-style="background-image:url('assets/img/admin/eventos/<?php echo $evento['imagen']; ?>');">
+style="background-image:url('admin/assets/img/eventos/<?php echo $evento['imagen']; ?>');">
     <div class="overlay-general"></div>
     <div class="hero-general-content">
         <h1>
@@ -63,7 +63,7 @@ style="background-image:url('assets/img/admin/eventos/<?php echo $evento['imagen
 
         <!-- DESCRIPCION -->
         <div class="detalle-texto">
-            <img src="assets/img/admin/eventos/<?php echo $evento['imagen']; ?>"
+            <img src="admin/assets/img/eventos/<?php echo $evento['imagen']; ?>"
                 class="img-evento">
             <h2>
                 Información del Evento
@@ -85,7 +85,7 @@ style="background-image:url('assets/img/admin/eventos/<?php echo $evento['imagen
                     <h3>
                         <?php echo $archivo['nombre_archivo']; ?>
                     </h3>
-                    <a href="assets/docs/eventos/<?php echo $archivo['archivo_pdf']; ?>"
+                    <a href="admin/assets/docs/eventos/<?php echo $archivo['archivo_pdf']; ?>"
                        target="_blank">
                         Ver Documento
                     </a>
