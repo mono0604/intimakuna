@@ -893,13 +893,7 @@ footer{
     .hero-general{
         height:35vh;
     }
-    .hero-general-content h1{
-        font-size:30px;
-    }
-    .hero-general-content p{
-        font-size:16px;
-    }
-
+   
     /* SECCIONES */
     .beneficios,
     .servicios,
