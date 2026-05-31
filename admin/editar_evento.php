@@ -108,7 +108,7 @@ if(!$evento){
                     </label>
 
                     <br><br>
-                    <img src="../assets/img/admin/eventos/<?php echo $evento['imagen']; ?>"
+                    <img src="assets/img/eventos/<?php echo $evento['imagen']; ?>"
                          class="preview-admin-img">
                 </div>
 
