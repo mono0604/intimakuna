@@ -6,7 +6,7 @@ $stmt = $conexion->prepare($sql);
 $stmt->execute();
 $eventos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
-
+<?php include 'includes/header.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -23,7 +23,7 @@ $eventos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
 
-<?php include 'includes/header.php'; ?>
+
 
 <!-- HERO -->
 <section class="hero-general"

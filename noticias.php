@@ -7,7 +7,7 @@ $stmt = $conexion->prepare($sql);
 $stmt->execute();
 $noticias = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
-
+<?php include 'includes/header.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,7 +21,7 @@ $noticias = $stmt->fetchAll(PDO::FETCH_ASSOC);
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-<?php include 'includes/header.php'; ?>
+
 
 <!-- HERO -->
 <section class="hero-general"

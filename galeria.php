@@ -19,7 +19,7 @@ $stmt_vid = $conexion->prepare($sql_vid);
 $stmt_vid->execute();
 $videos = $stmt_vid->fetchAll(PDO::FETCH_ASSOC);
 ?>
-
+<?php include 'includes/header.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -36,7 +36,7 @@ $videos = $stmt_vid->fetchAll(PDO::FETCH_ASSOC);
 <body>
 
 <!-- HEADER -->
-<?php include 'includes/header.php'; ?>
+
 
 <!-- HERO -->
 <section class="hero-general"

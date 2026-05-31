@@ -6,6 +6,7 @@ $stmt = $conexion->prepare($sql);
 $stmt->execute();
 $experiencias = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
+<?php include 'includes/header.php'; ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -23,7 +24,7 @@ $experiencias = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
 
-<?php include 'includes/header.php'; ?>
+
 
 <!-- HERO -->
 <section class="hero-general"

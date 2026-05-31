@@ -1,3 +1,4 @@
+<?php include 'includes/header.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -13,7 +14,7 @@
 
 <body>
     <!-- HEADER -->
-    <?php include 'includes/header.php'; ?>
+    
     <!-- HERO -->
     <section class="hero-general"
         style="background-image:url('assets/img/reservas/portada_reservas.jpg');">

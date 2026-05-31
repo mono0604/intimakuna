@@ -59,7 +59,7 @@ $stmtArchivos->bindParam(':id', $id);
 $stmtArchivos->execute();
 $archivos = $stmtArchivos->fetchAll(PDO::FETCH_ASSOC);
 ?>
-
+<?php include 'includes/header.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -78,7 +78,7 @@ $archivos = $stmtArchivos->fetchAll(PDO::FETCH_ASSOC);
 <body>
 
 <!-- HEADER -->
-<?php include 'includes/header.php'; ?>
+
 
 <!-- HERO -->
 <section class="hero-general"

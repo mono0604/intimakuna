@@ -1,3 +1,4 @@
+<?php include 'includes/header.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -11,7 +12,7 @@
 </head>
 <body>
 
-<?php include 'includes/header.php'; ?>
+
 
     <!-- HERO CONTACTO -->
     <section class="hero-general"
