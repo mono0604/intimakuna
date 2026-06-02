@@ -21,7 +21,7 @@ $evento = $stmt_img->fetch(PDO::FETCH_ASSOC);
 /* ELIMINAR IMAGEN */
 /* ========================= */
 if($evento){
-    $ruta_imagen = "../../assets/img/admin/eventos/" . $evento['imagen'];
+    $ruta_imagen = "../assets/img/eventos/" . $evento['imagen'];
     if(file_exists($ruta_imagen)){
         unlink($ruta_imagen);
     }

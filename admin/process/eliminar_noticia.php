@@ -18,7 +18,7 @@ $noticia = $stmt_img->fetch(PDO::FETCH_ASSOC);
 /* ELIMINAR IMAGEN */
 /* ========================= */
 if($noticia){
-    $ruta = "../../assets/img/admin/noticias/" . $noticia['imagen'];
+    $ruta = "../assets/img/noticias/" . $noticia['imagen'];
     if(file_exists($ruta)){
         unlink($ruta);
     }

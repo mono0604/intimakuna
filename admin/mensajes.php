@@ -65,7 +65,7 @@ $mensajes = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <td>
                         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=<?php echo $mensaje['correo']; ?>"
                             target="_blank"
-                            class="correo-link">
+                            class="link-contacto">
                             <i class="fa-solid fa-envelope"></i>
                             <?php echo $mensaje['correo']; ?>
                         </a>

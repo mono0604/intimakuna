@@ -37,10 +37,10 @@ if(!empty($_FILES['imagen']['name'])){
     $tmp = $_FILES['imagen']['tmp_name'];
     move_uploaded_file(
         $tmp,
-        "../../assets/img/admin/noticias/" . $imagen
+        "../assets/img/noticias/" . $imagen
     );
     /* ELIMINAR ANTERIOR */
-    $ruta_anterior = "../../assets/img/admin/noticias/" . $imagen_actual;
+    $ruta_anterior = "../assets/img/noticias/" . $imagen_actual;
     if(file_exists($ruta_anterior)){
         unlink($ruta_anterior);
     }

@@ -108,7 +108,7 @@ $videos = $stmt_vid->fetchAll(PDO::FETCH_ASSOC);
                         <?php echo $img['id_imagen']; ?>
                     </td>
                     <td>
-                        <img src="../assets/img/admin/galeria/<?php echo $img['imagen']; ?>"
+                        <img src="assets/img/galeria/<?php echo $img['imagen']; ?>"
                              class="admin-img">
                     </td>
                     <td>

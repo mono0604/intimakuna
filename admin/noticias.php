@@ -52,8 +52,8 @@ $noticias = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
 
         <!-- TABLA -->
-        <div class="admin-tabla-container">
-            <table class="admin-tabla">
+        <div class="table-container">
+            <table class="admin-table">
                 <thead>
                     <tr>
                         <th>ID</th>

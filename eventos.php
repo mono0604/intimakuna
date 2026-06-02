@@ -42,7 +42,7 @@ style="background-image:url('assets/img/eventos/portada_eventos.jpg');">
     <div class="titulo">
         <h2>Próximos Eventos</h2>
         <p>
-            Descubre nuestras actividades y experiencias.
+            Participa activamente de nustros eventos
         </p>
     </div>
     <div class="eventos-grid">

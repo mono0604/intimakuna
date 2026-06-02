@@ -69,15 +69,15 @@ if(session_status() === PHP_SESSION_NONE){
             <!-- LOGIN ADMIN -->
             <?php if(isset($_SESSION['admin'])): ?>
                 <li>
-                    <a href="admin/login.php"
-                       class="btn-login">
+                    <a href="<?php echo $base_url; ?>admin/login.php"
+                    class="btn-login">
                         Panel Admin
                     </a>
                 </li>
             <?php else: ?>
                 <li>
-                    <a href="admin/login.php"
-                       class="btn-login">
+                    <a href="<?php echo $base_url; ?>admin/login.php"
+                    class="btn-login">
                         Iniciar Sesión
                     </a>
                 </li>

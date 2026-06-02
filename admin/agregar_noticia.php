@@ -4,7 +4,7 @@ if(!isset($_SESSION['admin'])){
     header("Location: login.php");
     exit();
 }
-$pagina_actual = 'eventos';
+$pagina_actual = 'noticias';
 ?>
 <!DOCTYPE html>
 <html lang="es">

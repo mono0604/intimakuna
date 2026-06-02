@@ -9,7 +9,7 @@ $stmt_img->bindParam(':id', $id);
 $stmt_img->execute();
 $img = $stmt_img->fetch(PDO::FETCH_ASSOC);
 if($img){
-    $ruta = "../../assets/img/admin/galeria/" . $img['imagen'];
+    $ruta = "../assets/img/galeria/" . $img['imagen'];
     if(file_exists($ruta)){
         unlink($ruta);
     }

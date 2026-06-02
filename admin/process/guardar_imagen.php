@@ -6,7 +6,7 @@ $imagen = $_FILES['imagen']['name'];
 $tmp = $_FILES['imagen']['tmp_name'];
 move_uploaded_file(
     $tmp,
-    "../../assets/img/admin/galeria/" . $imagen
+    "../assets/img/galeria/" . $imagen
 );
 
 $sql = "INSERT INTO galeria_imagenes(

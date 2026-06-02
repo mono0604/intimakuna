@@ -53,16 +53,18 @@ $reservas = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="table-container">
         <table class="admin-table">
             <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Correo</th>
-                <th>Teléfono</th>
-                <th>Destino</th>
-                <th>Fecha</th>
-                <th>Personas</th>
-                <th>Mensaje</th>
-                <th>Estado</th>
-                <th>Acciones</th>
+                <thead>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Teléfono</th>
+                    <th>Destino</th>
+                    <th>Fecha</th>
+                    <th>Personas</th>
+                    <th>Mensaje</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </thead>
             </tr>
             <tbody>
             <?php foreach($reservas as $reserva): ?>
@@ -82,7 +84,7 @@ $reservas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 ?>
                 <a href="https://wa.me/57<?php echo $telefono; ?>"
                    target="_blank"
-                   class="telefono-whatsapp">
+                   class="link-contacto">
                     <i class="fa-brands fa-whatsapp"></i>
                     <?php echo $reserva['telefono']; ?>
                 </a>

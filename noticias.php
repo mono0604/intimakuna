@@ -25,7 +25,7 @@ $noticias = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <!-- HERO -->
 <section class="hero-general"
-style="background-image:url('assets/img/admin/noticias/portada_noticias.jpg');">
+style="background-image:url('assets/img/noticias/portada_noticias.jpg');">
     <div class="overlay-general"></div>
     <div class="hero-general-content">
         <h1>

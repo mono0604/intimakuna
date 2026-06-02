@@ -85,14 +85,6 @@ if(!$noticia){
                             <?php if($noticia['categoria'] == 'Convocatorias') echo 'selected'; ?>>
                             Convocatorias
                         </option>
-                        <option value="Eventos"
-                            <?php if($noticia['categoria'] == 'Eventos') echo 'selected'; ?>>
-                            Eventos
-                        </option>
-                        <option value="Actividades"
-                            <?php if($noticia['categoria'] == 'Actividades') echo 'selected'; ?>>
-                            Actividades
-                        </option>
                     </select>
                 </div>
                 <!-- FECHA -->
