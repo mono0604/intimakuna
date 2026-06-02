@@ -2041,464 +2041,307 @@ footer{
 .fc-day-today{
     background:rgba(11,163,109,.08) !important;
 }
+
+
 /* ===================================== */
-/* DETALLE EXPERIENCIA RESPONSIVE */
+/* RESPONSIVE GLOBAL */
+/* ===================================== */
+
+/* ===================================== */
+/* TABLET */
+/* ===================================== */
+
+@media (max-width:1024px){
+
+/* MENU */
+.menu-toggle{
+    display:flex;
+}
+.navbar{
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    background:#fff;
+    max-height:0;
+    overflow:hidden;
+    transition:.4s ease;
+}
+.navbar.active{
+    max-height:700px;
+    box-shadow:0 15px 30px rgba(0,0,0,.1);
+}
+.navbar ul{
+    flex-direction:column;
+    align-items:flex-start;
+    padding:25px;
+    gap:18px;
+}
+.btn-login{
+    margin-top:10px;
+}
+
+/* HERO */
+.hero-general-content h1,
+.slide-content h1,
+.hero-destino-content h1{
+    font-size:42px;
+}
+.hero-general-content p,
+.slide-content p{
+    font-size:18px;
+}
+
+/* GRID GENERAL */
+.intro-grid,
+.main-grid,
+.bloque-grid,
+.beneficios,
+.cards,
+.catalogo-grid,
+.estadisticas,
+.videos-grid,
+.nosotros,
+.testimonios-grid,
+.videos-galeria-grid,
+.imagenes-grid,
+.eventos-grid,
+.reservas-container,
+.contacto-container,
+.experiencias-grid,
+.galeria-grid-destino,
+.noticias-grid,
+.documentos-grid,
+.login-container{
+    grid-template-columns:1fr;
+}
+
+/* TITULOS */
+.titulo h2,
+.section-title h2,
+.intro-texto h2,
+.bloque-texto h2,
+.nosotros-texto h2{
+    font-size:35px;
+}
+
+/* INPUTS */
+.input-group{
+    grid-template-columns:1fr;
+}
+
+/* RESERVAS */
+.reservas-info{
+    min-height:600px;
+}
+.reservas-card{
+    left:20px;
+    right:20px;
+    bottom:20px;
+    padding:25px;
+}
+.reservas-form{
+    padding:35px;
+}
+
+/* LOGIN */
+.login-info{
+    min-height:350px;
+}
+.login-texto{
+    left:30px;
+    bottom:30px;
+}
+.login-texto h1{
+    font-size:35px;
+}
+
+/* ADMIN */
+.admin-panel{
+    flex-direction:column;
+}
+.sidebar-admin{
+    width:100%;
+    height:auto;
+    position:relative;
+}
+.sidebar-admin ul{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+}
+.sidebar-admin ul li{
+    margin-bottom:0;
+}
+.admin-content{
+    width:100%;
+    margin-left:0;
+}
+.dashboard-cards{
+    grid-template-columns:1fr;
+}
+.table-container{
+    overflow-x:auto;
+}
+}
+
+/* ===================================== */
+/* MOBILE */
 /* ===================================== */
 
 @media (max-width:768px){
 
-    /* CONTENEDOR */
+/* CONTENEDORES */
+.destino-container,
+.beneficios,
+.catalogo,
+.nosotros,
+.testimonios,
+.galeria-videos,
+.imagenes-galeria,
+.eventos-page,
+.calendario-page,
+.reservas-container{
+    width:92%;
+}
 
-    .destino-container{
-        width:92%;
-    }
+/* HERO */
+.hero-general{
+    height:50vh;
+}
+.hero-general-content h1,
+.slide-content h1,
+.hero-destino-content h1{
+    font-size:34px;
+    line-height:1.2;
+}
+.hero-general-content p,
+.slide-content p{
+    font-size:16px;
+}
 
-    /* HERO */
+/* DETALLE EXPERIENCIAS */
+.main-grid,
+.bloque-grid{
+    gap:40px;
+}
+.main-texto{
+    margin-bottom:0;
+}
+.main-texto h2{
+    font-size:32px;
+    line-height:1.25;
+}
+.main-texto p{
+    text-align:left;
+    line-height:1.8;
+    font-size:16px;
+}
+.main-imagen img{
+    width:100%;
+    display:block;
+    border-radius:20px;
+}
+.intro-icons{
+    flex-direction:column;
+    gap:15px;
+}
+.intro-icon-card{
+    width:100%;
+    min-width:unset;
+}
+.experiencia-card img{
+    height:220px;
+}
+.galeria-grid-destino img{
+    height:240px;
+}
 
-    .hero-general{
-        height:55vh;
-    }
+/* SLIDER */
+.prev,
+.next{
+    width:45px;
+    height:45px;
+    font-size:18px;
+}
+.prev{
+    left:15px;
+}
+.next{
+    right:15px;
+}
 
-    .hero-general-content h1{
-        font-size:34px;
-        line-height:1.2;
-    }
+/* DETALLES */
+.detalle-texto,
+.detalle-container,
+.contacto-info,
+.contacto-form{
+    padding:25px;
+}
+.detalle-container h1{
+    font-size:30px;
+}
 
-    .hero-general-content p{
-        font-size:16px;
-        padding:0 15px;
-    }
+/* CTA */
+.cta-content h2{
+    font-size:30px;
+    line-height:1.3;
+}
+.cta-content p{
+    font-size:16px;
+}
+.cta-content .btn{
+    display:block;
+    width:100%;
+    max-width:320px;
+    margin:10px auto;
+}
 
-    /* GRID PRINCIPAL */
+/* DOCUMENTOS */
+.documento-card{
+    padding:30px 25px;
+}
+.documento-card h3{
+    font-size:20px;
+}
+.documento-card a{
+    width:100%;
+    text-align:center;
+    padding:15px 20px;
+}
 
-    .main-grid{
-        grid-template-columns:1fr !important;
-        gap:40px;
-    }
-
-    .bloque-grid{
-        grid-template-columns:1fr !important;
-        gap:40px;
-    }
-
-    /* TEXTO */
-    .main-texto{
-        margin-bottom:0;
-    }
-    .main-texto h2{
-        font-size:34px;
-        line-height:1.25;
-    }
-    .main-texto p{
-        text-align:left;
-        font-size:16px;
-        line-height:1.9;
-    }
-
-    /* IMAGENES */
-    .main-imagen{
-        width:100%;
-    }
-    .main-imagen img{
-        width:100%;
-        display:block;
-        border-radius:20px;
-    }
-
-    /* ICONOS */
-    .intro-icons{
-        flex-direction:column;
-        gap:15px;
-    }
-    .intro-icon-card{
-        width:100%;
-        min-width:unset;
-    }
-
-    /* ACTIVIDADES */
-    .experiencias-grid{
-        grid-template-columns:1fr;
-    }
-    .experiencia-card img{
-        height:220px;
-    }
-
-    /* GALERIA */
-    .galeria-grid-destino{
-        grid-template-columns:1fr;
-    }
-    .galeria-grid-destino img{
-        height:240px;
-    }
-
-    /* DOCUMENTOS */
-    .documentos-grid{
-        grid-template-columns:1fr;
-        gap:20px;
-    }
-
-    /* CTA */
-    .cta-content h2{
-        font-size:32px;
-        line-height:1.3;
-    }
-    .cta-content p{
-        font-size:16px;
-    }
-    .cta-content .btn{
-        display:block;
-        width:100%;
-        max-width:320px;
-        margin:10px auto;
-    }
+/* ADMIN */
+.admin-topbar h1{
+    font-size:32px;
+}
 }
 
 /* ===================================== */
-/* RESPONSIVE */
+/* MOVILES PEQUEÑOS */
 /* ===================================== */
 
-@media(max-width:992px){
-
-    .intro-grid,
-    .bloque-grid,
-    .experiencias-grid,
-    .galeria-grid-destino{
-        grid-template-columns:1fr;
-    }
-
-    .hero-destino-content h1{
-        font-size:45px;
-    }
-
-    .section-title h2,
-    .intro-texto h2,
-    .bloque-texto h2{
-        font-size:35px;
-    }
-
-}
-/* RESPONSIVE */
-
-@media(max-width:768px){
-
-    .detalle-texto{
-        padding:30px;
-    }
-
-}
-/* ========================= */
-/* RESPONSIVE */
-/* ========================= */
-
-@media(max-width:1100px){
-
-    .menu-toggle{
-        display:flex;
-    }
-
-    .navbar{
-        position:absolute;
-
-        top:100%;
-        left:0;
-
-        width:100%;
-
-        background:white;
-
-        max-height:0;
-        overflow:hidden;
-
-        transition:.4s ease;
-    }
-
-    .navbar.active{
-        max-height:700px;
-        box-shadow:0 15px 30px rgba(0,0,0,.1);
-    }
-
-    .navbar ul{
-        flex-direction:column;
-        align-items:flex-start;
-
-        padding:25px;
-        gap:18px;
-    }
-
-    .btn-login{
-        margin-top:10px;
-    }
+@media (max-width:480px){
+.hero-general{
+    height:40vh;
 }
 
-
-
-
-
-
-/* TABLET */
-@media(max-width:1000px){
-
-    /* HERO */
-    .hero-general-content h1,
-    .slide-content h1{
-        font-size:40px;
-    }
-    .slide-content p,
-    .hero-general-content p{
-        font-size:18px;
-    }
-    .prev,
-    .next{
-        width:50px;
-        height:50px;
-    }
-
-    /* GRIDS */
-    .beneficios,
-    .cards,
-    .catalogo-grid,
-    .estadisticas,
-    .videos-grid,
-    .nosotros,
-    .testimonios-grid,
-    .videos-galeria-grid,
-    .imagenes-grid,
-    .eventos-grid,
-    .reservas-container,
-    .contacto-container{
-        grid-template-columns:1fr;
-    }
-
-    /* TITULOS */
-    .titulo h2,
-    .nosotros-texto h2,
-    .reservas-card h3{
-        font-size:35px;
-    }
-
-    /* INPUT GROUP */
-    .input-group{
-        grid-template-columns:1fr;
-    }
-
-    /* RESERVAS */
-    .reservas-info{
-        min-height:600px;
-    }
-    .reservas-card{
-        left:20px;
-        right:20px;
-        bottom:20px;
-        padding:25px;
-    }
-    .reservas-form{
-        padding:35px;
-    }
-
+.hero-general-content h1,
+.slide-content h1{
+    font-size:28px;
 }
-
-/* MOBILE */
-@media(max-width:600px){
-
-    /* HERO */
-    .hero-general{
-        height:35vh;
-    }
-   
-    /* SECCIONES */
-    .beneficios,
-    .catalogo,
-    .nosotros,
-    .testimonios,
-    .galeria-videos,
-    .imagenes-galeria,
-    .eventos-page,
-    .calendario-page{
-        width:92%;
-    }
-
-    /* SLIDER */
-    .slide-content h1{
-        font-size:30px;
-    }
-    .slide-content p{
-        font-size:16px;
-    }
-    .prev,
-    .next{
-        width:45px;
-        height:45px;
-        font-size:18px;
-    }
-    .prev{
-        left:15px;
-    }
-    .next{
-        right:15px;
-    }
-
-    /* TITULOS */
-    .titulo h2,
-    .nosotros-texto h2{
-        font-size:28px;
-    }
-
-    /* RESERVAS */
-    .reservas{
-        padding:80px 0;
-    }
-    .reservas-container{
-        width:92%;
-        gap:30px;
-    }
-    .reservas-info{
-        min-height:500px;
-        border-radius:20px;
-    }
-    .reservas-card{
-        position:relative;
-        left:auto;
-        right:auto;
-        bottom:auto;
-        margin:20px;
-        width:auto;
-    }
-    .reservas-card h3{
-        font-size:24px;
-    }
-    .reservas-card p,
-    .beneficio-item span{
-        font-size:15px;
-    }
-    .reservas-form{
-        padding:25px;
-        border-radius:20px;
-    }
-    .reservas-form input,
-    .reservas-form select,
-    .reservas-form textarea{
-        padding:15px;
-    }
-
-    /* CONTACTO */
-    .contacto-info,
-    .contacto-form{
-        padding:25px;
-    }
-
-    /* TESTIMONIOS */
-    .testimonio{
-        padding:25px;
-    }
+.titulo h2,
+.nosotros-texto h2,
+.main-texto h2{
+    font-size:26px;
 }
-
-/* RESPONSIVE */
-@media(max-width:900px){
-    .login-container{
-        grid-template-columns:1fr;
-    }
-    .login-info{
-        min-height:350px;
-    }
-    .login-texto{
-        left:30px;
-        bottom:30px;
-    }
-    .login-texto h1{
-        font-size:35px;
-    }
+.reservas-card h3{
+    font-size:22px;
 }
-
-/* ========================= */
-/* RESPONSIVE ADMIN MOBILE */
-/* ========================= */
-
-@media(max-width:768px){
-    .admin-panel{
-        flex-direction:column;
-    }
-    .sidebar-admin{
-        width:100%;
-        height:auto;
-        position:relative;
-    }
-    .admin-content{
-        width:100%;
-        padding:20px;
-        margin-left:0;
-    }
-    .admin-topbar h1{
-        font-size:32px;
-    }
-
-    .dashboard-cards{
-        grid-template-columns:1fr;
-    }
-
-    .table-container{
-        overflow-x:auto;
-    }
-
+.reservas-form{
+    padding:20px;
 }
-/* RESPONSIVE */
-
-@media(max-width:1000px){
-
-    .noticias-grid{
-        grid-template-columns:1fr;
-    }
-
-    .detalle-container{
-        padding:30px;
-    }
-
-    .detalle-container h1{
-        font-size:32px;
-    }
-
+.testimonio{
+    padding:20px;
 }
-
-/* RESPONSIVE */
-
-@media(max-width:1000px){
-
-    .admin-panel{
-        flex-direction:column;
-    }
-
-    .sidebar-admin{
-        width:100%;
-        height:auto;
-        position:relative;
-    }
-
-    .sidebar-admin ul{
-        display:flex;
-        flex-wrap:wrap;
-        gap:10px;
-        justify-content:center;
-    }
-
-    .sidebar-admin ul li{
-        margin-bottom:0;
-    }
-
- 
-
-
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-    .documento-card{
-        padding:30px 25px;
-    }
-    .documento-card h3{
-        font-size:20px;
-    }
-    .documento-card a{
-        width:100%;
-        text-align:center;
-        padding:15px 20px;
-    }
 }
