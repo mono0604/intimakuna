@@ -1,3 +1,4 @@
+<?php include 'includes/header.php'; ?>
 <?php
 require 'config/database.php';
 $sql = "SELECT * FROM eventos
@@ -15,10 +16,8 @@ foreach($eventos as $evento){
 }
 ?>
 
-<?php include 'includes/header.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -30,10 +29,7 @@ foreach($eventos as $evento){
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.css" rel="stylesheet">
 </head>
-
 <body>
-
-
 
 <!-- HERO -->
 <section class="hero-general"
@@ -90,11 +86,9 @@ style="background-image:url('assets/img/eventos/portada_eventos.jpg');">
             Consulta las fechas programadas.
         </p>
     </div>
-
     <div class="calendar-box">
         <div id="calendar"></div>
     </div>
-
 </section>
 
 <?php include 'includes/footer.php'; ?>
@@ -107,7 +101,6 @@ style="background-image:url('assets/img/eventos/portada_eventos.jpg');">
     </span>
     <img id="imagenExpandida">
 </div>
-
 <script>
 function abrirImagen(src){
     document.getElementById("modalImagen").style.display = "flex";
@@ -119,41 +112,24 @@ function cerrarImagen(){
 </script>
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
 <script>
-
 document.addEventListener('DOMContentLoaded', function(){
-
     var calendarEl = document.getElementById('calendar');
-
     var calendar = new FullCalendar.Calendar(calendarEl, {
-
         initialView: 'dayGridMonth',
-
         locale: 'es',
-
         height: 'auto',
-
         events: [
-
             <?php foreach($eventos as $evento): ?>
-
             {
                 title: '<?php echo addslashes($evento["titulo"]); ?>',
-
                 start: '<?php echo date("Y-m-d", strtotime($evento["fecha_evento"])); ?>',
-
                 url: 'detalle_evento.php?id=<?php echo $evento["id_evento"]; ?>'
             },
-
             <?php endforeach; ?>
-
         ]
-
     });
-
     calendar.render();
-
 });
-
 </script>
 </body>
 </html>
