@@ -1933,7 +1933,6 @@ footer{
 /* ========================= */
 /* LOGO */
 /* ========================= */
-
 .logo img{
     height:55px;
 }
@@ -1941,11 +1940,9 @@ footer{
 /* ========================= */
 /* NAVBAR */
 /* ========================= */
-
 .navbar{
     margin-left:auto;
 }
-
 .navbar ul{
     display:flex;
     align-items:center;
@@ -1955,12 +1952,10 @@ footer{
     margin:0;
     padding:0;
 }
-
 .navbar li{
     display:flex;
     align-items:center;
 }
-
 .navbar a{
     text-decoration:none;
     color:#0ba36d;
@@ -1969,7 +1964,6 @@ footer{
 
     transition:.3s ease;
 }
-
 .navbar a:hover{
     color:#06694a;
     transform:translateY(-2px);
@@ -1978,7 +1972,6 @@ footer{
 /* ========================= */
 /* BOTON LOGIN */
 /* ========================= */
-
 .btn-login{
     background:#0ba36d;
     color:white !important;
@@ -2011,20 +2004,47 @@ footer{
 }
 
 /* ========================= */
+/* FULLCALENDAR */
+/* ========================= */
+.calendario-eventos{
+    width:85%;
+    margin:100px auto;
+}
+.calendar-box{
+    background:white;
+    padding:30px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+.fc{
+    font-family:'Poppins', sans-serif;
+}
+.fc-toolbar-title{
+    color:#0c3b2e;
+    font-size:28px !important;
+    font-weight:700;
+}
+.fc-button{
+    background:#0ba36d !important;
+    border:none !important;
+    border-radius:10px !important;
+}
+.fc-button:hover{
+    background:#087a52 !important;
+}
+.fc-daygrid-event{
+    background:#0ba36d !important;
+    border:none !important;
+    padding:4px;
+    border-radius:6px;
+}
+.fc-day-today{
+    background:rgba(11,163,109,.08) !important;
+}
+
+/* ========================= */
 /* HEADER RESPONSIVE MOBILE */
 /* ========================= */
-
-@media(max-width:768px){
-
-    /* HERO / CONTENIDO */
-    .hero-general,
-    .hero,
-    .hero-slider,
-    .page-banner{
-        margin-top:220px;
-    }
-
-}
 
 /* ===================================== */
 /* RESPONSIVE */
