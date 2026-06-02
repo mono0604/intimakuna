@@ -90,7 +90,7 @@ style="background-image:url('assets/img/galeria/portada_galeria.jpg');">
     <div class="imagenes-grid" id="imagenesContainer">
         <?php foreach($imagenes as $index => $img): ?>
         <div class="imagen-item extra-imagen <?php echo $index >= 6 ? 'oculto' : ''; ?>">
-            <img src="assets/img/admin/galeria/<?php echo $img['imagen']; ?>"
+            <img src="admin/assets/img/galeria/<?php echo $img['imagen']; ?>"
                  alt="">
             <div class="imagen-overlay">
                 <h3>

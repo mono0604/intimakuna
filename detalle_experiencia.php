@@ -82,7 +82,7 @@ $archivos = $stmtArchivos->fetchAll(PDO::FETCH_ASSOC);
 
 <!-- HERO -->
 <section class="hero-general"
-         style="background-image:url('admin/assets/img/experiencias/<?php echo $experiencia['imagen']; ?>');">
+         style="background-image:url('assets/img/experiencias/<?php echo $experiencia['imagen']; ?>');">
     <div class="overlay-general"></div>
     <div class="hero-general-content">
         <span>
@@ -134,7 +134,7 @@ $archivos = $stmtArchivos->fetchAll(PDO::FETCH_ASSOC);
             </div>
             <div class="main-imagen">   
                 <?php if(!empty($galeria)): ?>
-                    <img src="admin/assets/img/experiencias/<?php echo $galeria[0]['imagen']; ?>"
+                    <img src="assets/img/experiencias/<?php echo $galeria[0]['imagen']; ?>"
                         alt="">
                 <?php endif; ?>
             </div>
@@ -158,7 +158,7 @@ $archivos = $stmtArchivos->fetchAll(PDO::FETCH_ASSOC);
         <div class="experiencias-grid">
             <?php foreach($actividades as $actividad): ?>
             <div class="experiencia-card">
-                <img src="admin/assets/img/experiencias/<?php echo $actividad['imagen_ex']; ?>"
+                <img src="assets/img/experiencias/<?php echo $actividad['imagen_ex']; ?>"
                      alt=""
                      class="img-evento"
                      onclick="abrirImagen(this.src)">
@@ -182,7 +182,7 @@ $archivos = $stmtArchivos->fetchAll(PDO::FETCH_ASSOC);
         <div class="main-grid">
             <div class="main-imagen">
                 <?php if(!empty($galeria)): ?>
-                    <img src="admin/assets/img/experiencias/<?php echo $galeria[1]['imagen']; ?>"
+                    <img src="assets/img/experiencias/<?php echo $galeria[1]['imagen']; ?>"
                         alt="">
                 <?php endif; ?>
             </div>
@@ -216,7 +216,7 @@ $archivos = $stmtArchivos->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <div class="galeria-grid-destino">
             <?php foreach($galeria as $imagen): ?>
-            <img src="admin/assets/img/experiencias/<?php echo $imagen['imagen']; ?>"
+            <img src="assets/img/experiencias/<?php echo $imagen['imagen']; ?>"
                  alt=""
                  class="img-evento"
                  onclick="abrirImagen(this.src)">
@@ -243,7 +243,7 @@ $archivos = $stmtArchivos->fetchAll(PDO::FETCH_ASSOC);
             <h3>
                 <?php echo $archivo['nombre_archivo']; ?>
             </h3>
-            <a href="admin/assets/docs/experiencias/<?php echo $archivo['archivo_pdf']; ?>"
+            <a href="assets/docs/experiencias/<?php echo $archivo['archivo_pdf']; ?>"
                target="_blank">
                 Ver Documento
             </a>

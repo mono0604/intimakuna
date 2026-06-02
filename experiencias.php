@@ -49,7 +49,7 @@ style="background-image:url('assets/img/experiencias/experiencias_portada.jpg');
     <div class="eventos-grid">
         <?php foreach($experiencias as $experiencia): ?>
         <div class="evento-card">
-            <img src="admin/assets/img/experiencias/<?php echo $experiencia['imagen']; ?>"
+            <img src="assets/img/experiencias/<?php echo $experiencia['imagen']; ?>"
                 class="img-evento"
                 onclick="abrirImagen(this.src)">
             <div class="evento-content"><br>
