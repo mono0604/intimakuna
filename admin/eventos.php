@@ -97,5 +97,6 @@ $eventos = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </main>
 </div>
+<script src="includes/admin.js"></script>
 </body>
 </html>

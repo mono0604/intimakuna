@@ -160,57 +160,42 @@ const estado = document.getElementById('estadoDisponibilidad');
 /* ========================= */
 
 destino.addEventListener('change', async () => {
-
     fecha.innerHTML = `
         <option value="">
             Cargando fechas...
         </option>
     `;
-
     personas.innerHTML = `
         <option value="">
             Cantidad de personas
         </option>
     `;
-
     personas.disabled = true;
-
     estado.innerHTML = '';
-
     const response = await fetch(
         `process/obtener_disponibilidad.php?destino=${destino.value}`
     );
-
     const data = await response.json();
-
     fecha.innerHTML = `
         <option value="">
             Seleccione una fecha
         </option>
     `;
-
     if(data.length === 0){
-
         estado.innerHTML = `
             <div class="estado-agotado">
                 No hay fechas disponibles
             </div>
         `;
-
         return;
-
     }
-
     data.forEach(item => {
-
         fecha.innerHTML += `
             <option value="${item.fecha_disponible}">
                 ${item.fecha_disponible}
             </option>
         `;
-
     });
-
 });
 
 /* ========================= */
@@ -218,73 +203,51 @@ destino.addEventListener('change', async () => {
 /* ========================= */
 
 fecha.addEventListener('change', async () => {
-
     personas.innerHTML = `
         <option value="">
             Cargando cupos...
         </option>
     `;
-
     const response = await fetch(
         `process/obtener_disponibilidad.php?destino=${destino.value}&fecha=${fecha.value}`
     );
-
     const data = await response.json();
-
     personas.innerHTML = `
         <option value="">
             Cantidad de personas
         </option>
     `;
-
     if(data.cupos_disponibles <= 0){
-
         estado.innerHTML = `
             <div class="estado-agotado">
                 Agotado
             </div>
         `;
-
         personas.disabled = true;
-
         return;
-
     }
-
     personas.disabled = false;
-
     if(data.cupos_disponibles <= 5){
-
         estado.innerHTML = `
             <div class="estado-pocos">
                 Últimos cupos disponibles (${data.cupos_disponibles})
             </div>
         `;
-
     }else{
-
         estado.innerHTML = `
             <div class="estado-disponible">
                 ${data.cupos_disponibles} cupos disponibles
             </div>
         `;
-
     }
-
     for(let i = 1; i <= data.cupos_disponibles; i++){
-
         personas.innerHTML += `
             <option value="${i}">
                 ${i} persona(s)
             </option>
         `;
-
     }
-
 });
-
 </script>
-
-
 </body>
 </html>

@@ -1,4 +1,12 @@
 <?php include 'includes/header.php'; ?>
+<?php
+include 'config/database.php';
+$sql = "SELECT * FROM contactos LIMIT 1";
+$stmt = $conexion->prepare($sql);
+$stmt->execute();
+
+$contacto = $stmt->fetch(PDO::FETCH_ASSOC);
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -12,8 +20,6 @@
 </head>
 <body>
 
-
-
     <!-- HERO CONTACTO -->
     <section class="hero-general"
          style="background-image:url('assets/img/contactos/portada_contactos.jpg');">
@@ -26,49 +32,62 @@
             </p>
         </div>
     </section>
-
     <!-- CONTACTO -->
     <section class="contacto-container">
-        <!-- INFORMACION -->
-        <div class="contacto-info">
-            <h2>Información de Contacto</h2>
-            <div class="info-box">
-                <i class="fa-solid fa-phone"></i>
-                <div>
-                    <h4>Teléfono</h4>
-                    <p>316 6152660</p>
-                </div>
-            </div>
-            <div class="info-box">
-                <i class="fa-solid fa-envelope"></i>
-                <div>
-                    <h4>Correo Electrónico</h4>
-                    <p>contacto@intimakuna.org</p>
-                </div>
-            </div>
-            <div class="info-box">
-                <i class="fa-solid fa-location-dot"></i>
-                <div>
-                    <h4>Dirección</h4>
-                    <p>
-                        Calle xx # xx - xx <br>
-                        Vereda Chapud - Guachucal Nariño
-                    </p>
-                </div>
-            </div>
-            <div class="info-box">
-                <i class="fa-solid fa-clock"></i>
-                <div>
-                    <h4>Horarios de Atención</h4>
-                    <p>
-                        Lunes a viernes de 9:00AM - 5:00PM
-                    </p>
-                    <p>
-                        Sábados, domingos y festivos de 10:00AM - 6:00PM
-                    </p>
-                </div>
-            </div>
+        
+<!-- INFORMACION -->
+<div class="contacto-info">
+    <h2>Información de Contacto</h2>
+    <div class="info-box">
+        <i class="fa-solid fa-phone"></i>
+        <div>
+            <h4>Teléfono</h4>
+            <p>
+                <?php echo $contacto['telefono']; ?>
+            </p>
         </div>
+    </div>
+    <div class="info-box">
+        <i class="fa-solid fa-envelope"></i>
+        <div>
+            <h4>Correo Electrónico</h4>
+            <p>
+                <?php echo $contacto['correo']; ?>
+            </p>
+        </div>
+    </div>
+    <div class="info-box">
+        <i class="fa-solid fa-location-dot"></i>
+        <div>
+            <h4>Dirección</h4>
+            <p>
+                <?php echo nl2br($contacto['direccion']); ?>
+            </p>
+        </div>
+    </div>
+    <div class="info-box">
+        <i class="fa-brands fa-whatsapp"></i>
+        <div>
+            <h4>WhatsApp</h4>
+            <p>
+                <?php echo $contacto['whatsapp']; ?>
+            </p>
+        </div>
+    </div>
+    <div class="info-box">
+        <i class="fa-solid fa-clock"></i>
+        <div>
+            <h4>Horarios de Atención</h4>
+            <p>
+                Lunes a viernes de 9:00AM - 5:00PM
+            </p>
+            <p>
+                Sábados, domingos y festivos de 10:00AM - 6:00PM
+            </p>
+        </div>
+    </div>
+</div>
+
 
         <!-- FORMULARIO -->
         <div class="contacto-form">

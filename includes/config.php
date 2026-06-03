@@ -1,9 +1,12 @@
 <?php
-
-if($_SERVER['HTTP_HOST'] == 'localhost'){
+$host = $_SERVER['HTTP_HOST'];
+if(str_contains($host, 'localhost')){
     $base_url = "http://localhost/intimakuna/";
-}else{
-    $base_url = "https://" . $_SERVER['HTTP_HOST'] . "/";
 }
-
+elseif(str_contains($host, 'ngrok')){
+    $base_url = "https://" . $host . "/intimakuna/";
+}
+else{
+    $base_url = "https://" . $host . "/";
+}
 ?>

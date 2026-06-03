@@ -240,5 +240,6 @@ if(btnImagenesAdmin){
 }
 
 </script>
+<script src="includes/admin.js"></script>
 </body>
 </html>

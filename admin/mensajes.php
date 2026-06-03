@@ -93,4 +93,5 @@ $mensajes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </div>
 
 </body>
+<script src="includes/admin.js"></script>
 </html>

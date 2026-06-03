@@ -1,17 +1,17 @@
-<aside class="sidebar-admin">
+<button class="admin-toggle" id="adminToggle">
+    ☰ Menú Admin
+</button>
+
+<aside class="sidebar-admin" id="sidebarAdmin">
 
     <!-- LOGO -->
-<div class="sidebar-logo">
+    <div class="sidebar-logo">
 
-    <a href="../index.php">
-
-        <img src="../assets/img/logo.png" alt="">
-
-        <h2>INTIMAKUNA</h2>
-
-    </a>
-
-</div>
+        <a href="../index.php">
+            <img src="../assets/img/logo.png" alt="">
+            <h2>INTIMAKUNA</h2>
+        </a>
+    </div>
 
     <!-- MENU SUPERIOR -->
     <ul class="sidebar-top">
@@ -67,6 +67,13 @@
     </ul>
     <!-- MENU INFERIOR -->    
     <ul class="sidebar-bottom">
+        <li>
+            <a href="editar_contacto.php"
+               class="<?php echo ($pagina_actual == 'edit_contacto') ? 'active-admin' : ''; ?>">
+                <i class="fa-solid fa-address-book"></i>
+                Editar Contactos
+            </a>
+        </li>
         <li>
             <a href="change_password.php"
                class="<?php echo ($pagina_actual == 'change_password') ? 'active-admin' : ''; ?>">

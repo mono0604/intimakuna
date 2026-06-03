@@ -1122,7 +1122,13 @@ footer{
 .admin-form button:hover{
     background:#087a52;
 }
-
+.admin-form label:not(.titulo){
+    display:block;
+    margin-top:15px;
+    margin-bottom:6px;
+    font-weight:600;
+    color:#333;
+}
 /* IMG TABLA */
 .admin-img{
     width:120px;
@@ -1657,7 +1663,6 @@ footer{
 .cta-destino{
     position:relative;
     padding:120px 20px;
-    background-image:url('../img/turismo_comunitario/hero.jpg');
     background-size:cover;
     background-position:center;
     text-align:center;
@@ -2033,13 +2038,19 @@ footer{
     background:#087a52 !important;
 }
 .fc-daygrid-event{
-    background:#0ba36d !important;
     border:none !important;
     padding:4px;
     border-radius:6px;
 }
+
+.fc-h-event{
+    border:none !important;
+}
 .fc-day-today{
     background:rgba(11,163,109,.08) !important;
+}
+.admin-toggle{
+    display:none;
 }
 
 
@@ -2160,19 +2171,15 @@ footer{
 .admin-panel{
     flex-direction:column;
 }
-.sidebar-admin{
-    width:100%;
-    height:auto;
-    position:relative;
-}
+
 .sidebar-admin ul{
     display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:10px;
+    flex-direction:column;
+    gap:8px;
 }
+
 .sidebar-admin ul li{
-    margin-bottom:0;
+    width:100%;
 }
 .admin-content{
     width:100%;
@@ -2184,6 +2191,67 @@ footer{
 .table-container{
     overflow-x:auto;
 }
+}
+@media(max-width:768px){
+
+    .admin-toggle{
+
+        display:block;
+
+        width:100%;
+
+        padding:16px 20px;
+
+        background:#0c3b2e;
+
+        color:white;
+
+        border:none;
+
+        cursor:pointer;
+
+        font-size:18px;
+
+        font-weight:600;
+
+        text-align:left;
+
+        position:sticky;
+
+        top:0;
+
+        z-index:1001;
+    }
+    .sidebar-admin{
+        width:100%;
+        position:relative;
+
+        height:0;
+        max-height:0;
+
+        padding:0;
+        overflow:hidden;
+
+        transition:.4s ease;
+    }
+
+    .sidebar-admin.active{
+        height:auto;
+        max-height:1200px;
+        padding:30px 20px;
+    }
+    .sidebar-logo{
+        opacity:0;
+        max-height:0;
+        overflow:hidden;
+        transition:.3s ease;
+    }
+
+    .sidebar-admin.active .sidebar-logo{
+        opacity:1;
+        max-height:200px;
+    }
+
 }
 
 /* ===================================== */

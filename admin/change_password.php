@@ -88,5 +88,6 @@ $pagina_actual = 'change_password';
         </div>
     </main>
 </div>
+<script src="includes/admin.js"></script>
 </body>
 </html>

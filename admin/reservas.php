@@ -197,6 +197,7 @@ function confirmarCambio(select){
 }
 
 </script>
+<script src="includes/admin.js"></script>
 </body>
 </html>
 
