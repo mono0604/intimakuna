@@ -11,7 +11,6 @@ include '../../config/database.php';
 /* ========================= */
 /* VALIDAR DATOS */
 /* ========================= */
-
 $id_contacto = $_POST['id_contacto'];
 
 $facebook  = trim($_POST['facebook']);

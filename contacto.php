@@ -48,6 +48,15 @@ $contacto = $stmt->fetch(PDO::FETCH_ASSOC);
         </div>
     </div>
     <div class="info-box">
+        <i class="fa-brands fa-whatsapp"></i>
+        <div>
+            <h4>WhatsApp</h4>
+            <p>
+                <?php echo $contacto['whatsapp']; ?>
+            </p>
+        </div>
+    </div>
+    <div class="info-box">
         <i class="fa-solid fa-envelope"></i>
         <div>
             <h4>Correo Electrónico</h4>
@@ -62,15 +71,6 @@ $contacto = $stmt->fetch(PDO::FETCH_ASSOC);
             <h4>Dirección</h4>
             <p>
                 <?php echo nl2br($contacto['direccion']); ?>
-            </p>
-        </div>
-    </div>
-    <div class="info-box">
-        <i class="fa-brands fa-whatsapp"></i>
-        <div>
-            <h4>WhatsApp</h4>
-            <p>
-                <?php echo $contacto['whatsapp']; ?>
             </p>
         </div>
     </div>

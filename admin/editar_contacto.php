@@ -45,46 +45,39 @@ $contacto = $stmt->fetch(PDO::FETCH_ASSOC);
 
     <!-- CONTENIDO -->
     <main class="admin-content">
-
         <div class="admin-topbar">
             <h1>Contacto y Redes Sociales</h1>
         </div>
-
         <div class="admin-form-box">
-
             <form action="process/actualizar_contactos.php"
                   method="POST"
                   class="admin-form">      
-
-                <label class="titulo">
+                <!-- ID -->
+                <input type="hidden"
+                       name="id_contacto"
+                       value="<?php echo $contacto['id_contacto']; ?>">
+                <h1>
                     <strong>REDES SOCIALES</strong>
-                </label>
-
+                </h1>
                 <label>Facebook</label>
                 <input type="text"
                     name="facebook"
                     value="<?php echo htmlspecialchars($contacto['facebook']); ?>">
-
                 <label>Instagram</label>
                 <input type="text"
                     name="instagram"
                     value="<?php echo htmlspecialchars($contacto['instagram']); ?>">
-
                 <label>YouTube</label>
                 <input type="text"
                     name="youtube"
                     value="<?php echo htmlspecialchars($contacto['youtube']); ?>">
-
                 <label>X / Twitter</label>
                 <input type="text"
                     name="twitter"
-                    value="<?php echo htmlspecialchars($contacto['twitter']); ?>">
-
-
-                <label class="titulo">
-                    CONTACTOS
-                </label>
-
+                    value="<?php echo htmlspecialchars($contacto['twitter']); ?>"><br>
+                <h1>
+                    <strong>CONTACTOS</strong>
+                </h1>
                 <label>Teléfono</label>
                 <input type="text"
                     name="telefono"

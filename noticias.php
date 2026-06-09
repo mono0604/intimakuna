@@ -49,7 +49,8 @@ style="background-image:url('assets/img/noticias/portada_noticias.jpg');">
         <?php foreach($noticias as $noticia): ?>
         <div class="evento-card">
             <img src="admin/assets/img/noticias/<?php echo $noticia['imagen']; ?>"
-                 alt="">
+                 alt=""
+                 onclick="abrirImagen(this.src)">
             <div class="evento-content"><br>
                 <span class="categoria-noticia">
                     <?php echo $noticia['categoria']; ?>
@@ -70,6 +71,24 @@ style="background-image:url('assets/img/noticias/portada_noticias.jpg');">
     </div>
 </section>
 <?php include 'includes/footer.php'; ?>
+
+<!-- MODAL IMAGEN -->
+<div id="modalImagen" class="modal-imagen">
+    <span class="cerrar-modal"
+          onclick="cerrarImagen()">
+        &times;
+    </span>
+    <img id="imagenExpandida">
+</div>
+<script>
+function abrirImagen(src){
+    document.getElementById("modalImagen").style.display = "flex";
+    document.getElementById("imagenExpandida").src = src;
+}
+function cerrarImagen(){
+    document.getElementById("modalImagen").style.display = "none";
+}
+</script>
 
 </body>
 </html>

@@ -3,8 +3,10 @@ session_start();
 require '../../config/database.php';
 $id = $_POST['id_evento'];
 $titulo = $_POST['titulo'];
+$resumen = $_POST['resumen'];
 $descripcion = $_POST['descripcion'];
 $fecha = $_POST['fecha_evento'];
+
 
 /* ========================= */
 /* OBTENER EVENTO ACTUAL */
@@ -43,12 +45,14 @@ if($_FILES['imagen']['name'] != ""){
 /* ========================= */
 $sql = "UPDATE eventos
         SET titulo = :titulo,
+            resumen = :resumen,
             descripcion = :descripcion,
             fecha_evento = :fecha_evento,
             imagen = :imagen
         WHERE id_evento = :id";
 $stmt = $conexion->prepare($sql);
 $stmt->bindParam(':titulo', $titulo);
+$stmt->bindParam(':resumen', $resumen);
 $stmt->bindParam(':descripcion', $descripcion);
 $stmt->bindParam(':fecha_evento', $fecha);
 $stmt->bindParam(':imagen', $nueva_imagen);

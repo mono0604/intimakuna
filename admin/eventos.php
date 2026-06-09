@@ -53,7 +53,7 @@ $eventos = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <th>ID</th>
                         <th>Imagen</th>
                         <th>Título</th>
-                        <th>Descripción</th>
+                        <th>Resumen</th>
                         <th>Fecha</th>
                         <th>Acciones</th>
                     </tr>

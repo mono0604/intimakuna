@@ -75,7 +75,14 @@ if(!$evento){
                            value="<?php echo $evento['titulo']; ?>"
                            required>
                 </div>
-
+                <div class="form-group">
+                    <label>Resumen</label>
+                    <input type="text"
+                            name="resumen"
+                            rows="3"
+                            value="<?php echo $evento['resumen']; ?>"
+                            required>
+                </div>
                 <!-- DESCRIPCION -->
                 <div class="form-group">
                     <label>

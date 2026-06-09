@@ -5,7 +5,6 @@ if(!isset($_SESSION['admin'])){
     exit();
 }
 require '../config/database.php';
-$pagina_actual = 'noticias';
 $id = $_GET['id'];
 
 /* ========================= */
@@ -39,62 +38,44 @@ if(!$noticia){
 
 <body>
 <div class="admin-panel">
-    <!-- SIDEBAR -->
 
     <?php include 'includes/sidebar.php'; ?>
-
-    <!-- CONTENIDO -->
+    
     <main class="admin-content">
-
-        <!-- TOPBAR -->
         <div class="admin-topbar">
-            <h1>
-                Editar Noticia
-            </h1>
+            <h1>Editar Noticia</h1>
         </div>
-
-        <!-- FORM -->
-
         <div class="form-admin-container">
             <form action="process/actualizar_noticia.php"
                   method="POST"
-                  enctype="multipart/form-data">
-
-                <!-- ID -->
+                  enctype="multipart/form-data"
+                  class="form-admin">
                 <input type="hidden"
                        name="id_noticia"
                        value="<?php echo $noticia['id_noticia']; ?>">
-
                 <!-- TITULO -->
                 <div class="form-group">
-                    <label>
-                        Título
-                    </label>
+                    <label>Título</label>
                     <input type="text"
                            name="titulo"
                            value="<?php echo $noticia['titulo']; ?>"
                            required>
                 </div>
+                <!-- RESUMEN -->
                 <div class="form-group">
                     <label>Resumen</label>
-                    <input type="text"
-                            name="resumen"
-                            rows="3"
-                            value="<?php echo $noticia['resumen']; ?>"
-                            required>
+                    <textarea name="resumen"
+                              rows="3"
+                              required><?php echo $noticia['resumen']; ?></textarea>
                 </div>
-
-                <!-- DESCRIPCION -->
+                <!-- CONTENIDO -->
                 <div class="form-group">
-                    <label>
-                        Descripción
-                    </label>
+                    <label>Contenido</label>
                     <textarea name="contenido"
-                            id="editor"
-                            rows="6"
-                            required><?php echo $noticia['contenido']; ?></textarea>
+                              rows="8"
+                              required><?php echo $noticia['contenido']; ?></textarea>
                 </div>
-
+                <!-- CATEGORIA -->
                 <div class="form-group">
                     <label>Categoría</label>
                     <select name="categoria" required>
@@ -108,65 +89,37 @@ if(!$noticia){
                         </option>
                     </select>
                 </div>
-
-
                 <!-- FECHA -->
                 <div class="form-group">
-
-                    <label>
-                        Fecha de la noticia
-                    </label>
-
+                    <label>Fecha de Publicación</label>
                     <input type="date"
                            name="fecha_publicacion"
                            value="<?php echo $noticia['fecha_publicacion']; ?>"
                            required>
-
                 </div>
-
                 <!-- IMAGEN ACTUAL -->
                 <div class="form-group">
-                    <label>
-                        Imagen Actual
-                    </label>
-
-                    <br><br>
+                    <label>Imagen Actual</label>
                     <img src="assets/img/noticias/<?php echo $noticia['imagen']; ?>"
                          class="preview-admin-img">
                 </div>
 
                 <!-- NUEVA IMAGEN -->
                 <div class="form-group">
-                    <label>
-                        Cambiar Imagen
-                    </label>
-
+                    <label>Nueva Imagen (Opcional)</label>
                     <input type="file"
-                           name="imagen">
-
+                           name="imagen"
+                           accept="image/*">
                 </div>
-
+                
                 <!-- BOTON -->
                 <button type="submit"
                         class="btn">
-                    <i class="fa-solid fa-floppy-disk"></i>
                     Actualizar Noticia
                 </button>
             </form>
         </div>
     </main>
 </div>
-<!-- CKEDITOR -->
-<script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
-
-<script>
-
-ClassicEditor
-.create(document.querySelector('#editor'))
-.catch(error => {
-    console.error(error);
-});
-
-</script>
 </body>
 </html>

@@ -60,8 +60,12 @@ style="background-image:url('admin/assets/img/noticias/<?php echo $noticia['imag
 
         <!-- DESCRIPCION -->
         <div class="detalle-texto">
+            <h1>
+                <?php echo $noticia['resumen']; ?>
+            </h1>
             <img src="admin/assets/img/noticias/<?php echo $noticia['imagen']; ?>"
-                class="img-evento">
+                class="img-evento"
+                onclick="abrirImagen(this.src)">
             <h2>
                 Información de la noticia
             </h2>
@@ -72,5 +76,23 @@ style="background-image:url('admin/assets/img/noticias/<?php echo $noticia['imag
     </div>
 </section>
 <?php include 'includes/footer.php'; ?>
+
+<!-- MODAL IMAGEN -->
+<div id="modalImagen" class="modal-imagen">
+    <span class="cerrar-modal"
+          onclick="cerrarImagen()">
+        &times;
+    </span>
+    <img id="imagenExpandida">
+</div>
+<script>
+function abrirImagen(src){
+    document.getElementById("modalImagen").style.display = "flex";
+    document.getElementById("imagenExpandida").src = src;
+}
+function cerrarImagen(){
+    document.getElementById("modalImagen").style.display = "none";
+}
+</script>
 </body>
 </html>

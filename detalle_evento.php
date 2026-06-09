@@ -63,8 +63,12 @@ style="background-image:url('admin/assets/img/eventos/<?php echo $evento['imagen
 
         <!-- DESCRIPCION -->
         <div class="detalle-texto">
+            <h1>
+                <strong><?php echo $evento['resumen']; ?></strong>
+            </h1>
             <img src="admin/assets/img/eventos/<?php echo $evento['imagen']; ?>"
-                class="img-evento">
+                class="img-evento"
+                onclick="abrirImagen(this.src)">
             <h2>
                 Información del Evento
             </h2>
@@ -97,5 +101,25 @@ style="background-image:url('admin/assets/img/eventos/<?php echo $evento['imagen
     </div>
 </section>
 <?php include 'includes/footer.php'; ?>
+
+<!-- MODAL IMAGEN -->
+<div id="modalImagen" class="modal-imagen">
+    <span class="cerrar-modal"
+          onclick="cerrarImagen()">
+        &times;
+    </span>
+    <img id="imagenExpandida">
+</div>
+<script>
+function abrirImagen(src){
+    document.getElementById("modalImagen").style.display = "flex";
+    document.getElementById("imagenExpandida").src = src;
+}
+function cerrarImagen(){
+    document.getElementById("modalImagen").style.display = "none";
+}
+</script>
+
+
 </body>
 </html>
