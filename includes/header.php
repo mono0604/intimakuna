@@ -38,7 +38,7 @@ if(session_status() === PHP_SESSION_NONE){
             </li>
             <li>
                 <a href="<?php echo $base_url; ?>experiencias.php">
-                    experiencias
+                    Experiencias
                 </a>
             </li>
             <li>
