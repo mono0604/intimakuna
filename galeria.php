@@ -91,7 +91,8 @@ style="background-image:url('assets/img/galeria/portada_galeria.jpg');">
         <?php foreach($imagenes as $index => $img): ?>
         <div class="imagen-item extra-imagen <?php echo $index >= 6 ? 'oculto' : ''; ?>">
             <img src="admin/assets/img/galeria/<?php echo $img['imagen']; ?>"
-                 alt="">
+                 alt=""
+                 onclick="abrirImagen(this.src)">
             <div class="imagen-overlay">
                 <h3>
                     <?php echo $img['titulo']; ?>
@@ -111,7 +112,23 @@ style="background-image:url('assets/img/galeria/portada_galeria.jpg');">
 
 <!-- FOOTER -->
 <?php include 'includes/footer.php'; ?>
-
+ <!-- MODAL IMAGEN -->
+    <div id="modalImagen" class="modal-imagen">
+        <span class="cerrar-modal"
+            onclick="cerrarImagen()">
+            &times;
+        </span>
+        <img id="imagenExpandida">
+    </div>
+    <script>
+    function abrirImagen(src){
+        document.getElementById("modalImagen").style.display = "flex";
+        document.getElementById("imagenExpandida").src = src;
+    }
+    function cerrarImagen(){
+        document.getElementById("modalImagen").style.display = "none";
+    }
+    </script>
 <script>
 
 /* ========================= */
